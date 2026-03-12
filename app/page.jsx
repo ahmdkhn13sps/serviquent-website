@@ -944,14 +944,14 @@ export default function Home() {
               { icon: "📧", label: "Email",        val: "info@serviquent.com", href: "mailto:info@serviquent.com" },
               { icon: "📞", label: "Phone (USA)",  val: "(307) 317-3044", href: "tel:+13073173044" },
               { icon: "📍", label: "USA Office",   val: "Cheyenne, Wyoming · United States" },
-              { icon: "🇮🇳", label: "India Office", val: "Gurugram, Haryana" },
+              { icon: "🇮🇳", label: "India Office", val: "Gurugram, Haryana · India" },
             ].map(function(d) {
               return (
                 <div key={d.label} style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 22 }}>
                   <div style={{ width: 46, height: 46, borderRadius: 12, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{d.icon}</div>
                   <div>
                     <div style={{ fontSize: 11, color: "rgba(255,255,255,0.42)", marginBottom: 3 }}>{d.label}</div>
-                    <div style={{ fontSize: 15, color: "#fff", fontWeight: 500 }}>{d.val}</div>
+                    <div style={{ fontSize: 15, color: "#fff", fontWeight: 500 }}>{d.href ? <a href={d.href} style={{color:"inherit",textDecoration:"none"}}>{d.val}</a> : d.val}</div>
                   </div>
                 </div>
               );
