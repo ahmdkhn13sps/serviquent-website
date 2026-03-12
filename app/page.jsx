@@ -558,7 +558,7 @@ export default function Home() {
             onError={function() { setVideoOk(false); }}
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1 }}
           >
-            <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.mp4" type="video/mp4" />
             <source src="https://videos.pexels.com/video-files/3255452/3255452-uhd_2560_1440_25fps.mp4" type="video/mp4" />
           </video>
         )}
