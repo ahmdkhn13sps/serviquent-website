@@ -161,6 +161,10 @@ body { font-family: 'Outfit', sans-serif; background: #f4f8ff; color: #0c1e4a; }
 function TelecomOverlay() {
   const canvasRef = useRef(null);
 
+  useEffect(function() {
+    document.title = "Serviquent Prime Solutions | Telecom Infrastructure Engineering";
+  }, []);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
