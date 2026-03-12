@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Serviquent Prime Solutions | Telecom Infrastructure Engineering",
+  title: "Telecom Infrastructure Engineering | Serviquent Prime Solutions | ",
   description: "Specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development.",
   icons: {
     icon: [
