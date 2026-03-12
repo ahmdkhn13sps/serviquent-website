@@ -559,7 +559,6 @@ export default function Home() {
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1 }}
           >
             <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.mp4" type="video/mp4" />
-            <source src="https://videos.pexels.com/video-files/3255452/3255452-uhd_2560_1440_25fps.mp4" type="video/mp4" />
           </video>
         )}
 
@@ -942,10 +941,10 @@ export default function Home() {
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5, marginBottom: 18 }}>Request a Quote for Your Required Service</h2>
             <p style={{ color: "rgba(255,255,255,0.58)", fontSize: 15, lineHeight: 1.85, marginBottom: 44 }}>Tell us about your project and our engineering team will respond within one business day. Whether you need a preliminary route design, a full FTTx engineering package, pole loading analysis, or permitting support — we are ready to scope your project and deliver.</p>
             {[
-              { icon: "📧", label: "Email",        val: "info@serviquent.com" },
-              { icon: "📞", label: "Phone (USA)",  val: "+1 (973) 000-0000" },
-              { icon: "📍", label: "USA Office",   val: "Dallas, TX · United States" },
-              { icon: "🇮🇳", label: "India Office", val: "Hyderabad, Telangana" },
+              { icon: "📧", label: "Email",        val: "info@serviquent.com", href: "mailto:info@serviquent.com" },
+              { icon: "📞", label: "Phone (USA)",  val: "(307) 317-3044", href: "tel:+13073173044" },
+              { icon: "📍", label: "USA Office",   val: "Cheyenne, Wyoming · United States" },
+              { icon: "🇮🇳", label: "India Office", val: "Gurugram, Haryana" },
             ].map(function(d) {
               return (
                 <div key={d.label} style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 22 }}>
@@ -1036,7 +1035,7 @@ export default function Home() {
           {[
             { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }]) },
             { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "#" }] },
-            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "#" }, { l: "+1 (973) 000-0000", h: "#" }, { l: "Dallas, TX · USA", h: "#contact" }, { l: "Hyderabad · India", h: "#contact" }] },
+            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
               <div key={col.h}>
