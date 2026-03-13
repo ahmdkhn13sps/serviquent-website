@@ -155,6 +155,57 @@ body { font-family: 'Outfit', sans-serif; background: #f4f8ff; color: #0c1e4a; }
 
 .footer-a { font-size: 13.5px; color: #60748b; text-decoration: none; transition: color 0.2s; }
 .footer-a:hover { color: #38d9ff; }
+
+/* ── MOBILE RESPONSIVE ─────────────────────────── */
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; max-width: 100vw; }
+
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-links { display: none !important; }
+  .nav-cta { display: none !important; }
+  .nav-mobile-menu { display: flex !important; }
+
+  /* Hero */
+  .hero-content { padding: 100px 20px 40px !important; }
+  .hero-title { font-size: 42px !important; line-height: 1.1 !important; }
+  .hero-para { font-size: 14px !important; }
+  .hero-pills { flex-wrap: wrap !important; }
+  .hero-btns { flex-direction: column !important; gap: 12px !important; }
+  .hero-btns a, .hero-btns button { width: 100% !important; text-align: center !important; }
+
+  /* Sections */
+  .section-inner { padding: 48px 20px !important; }
+  .two-col { grid-template-columns: 1fr !important; }
+  .three-col { grid-template-columns: 1fr !important; }
+  .four-col { grid-template-columns: 1fr 1fr !important; }
+
+  /* Services */
+  .svc-grid { grid-template-columns: 1fr !important; }
+
+  /* Contact */
+  .contact-inner { grid-template-columns: 1fr !important; }
+  .contact-form-card { padding: 24px 16px !important; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+
+  /* Tech marquee */
+  .tech-card { min-width: 120px !important; padding: 12px !important; }
+
+  /* FTTx cards */
+  .fttx-grid { grid-template-columns: 1fr !important; }
+
+  /* Projects */
+  .proj-grid { grid-template-columns: 1fr !important; }
+
+  /* Lifecycle */
+  .lifecycle-row { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr !important; }
+}
+
 `;
 
 /* ─── TELECOM CANVAS OVERLAY ─────────────────────────────── */
@@ -446,6 +497,7 @@ export default function Home() {
   const [videoOk,     setVideoOk]     = useState(true);
   const [form,        setForm]        = useState({ first: "", last: "", email: "", subject: "", service: "", message: "" });
   const [sent,        setSent]        = useState(false);
+  const [mobileMenu,  setMobileMenu]  = useState(false);
 
   const techRef = useRef(null);
   const fttxRef = useRef(null);
@@ -512,7 +564,7 @@ export default function Home() {
   var SL = { fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 14 };
 
   return (
-    <div style={{ fontFamily: "'Outfit', sans-serif" }}>
+    <div style={{ fontFamily: "'Outfit', sans-serif", overflowX: "hidden", maxWidth: "100vw" }}>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       {/* ══ NAVBAR ═══════════════════════════════════════════ */}
@@ -551,6 +603,22 @@ export default function Home() {
           Get a Quote
         </button>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {mobileMenu && (
+        <div style={{ position: "fixed", top: 72, left: 0, right: 0, background: "#fff", zIndex: 499, padding: "20px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", flexDirection: "column", gap: 4 }}>
+          {["Services","Engineering","FTTx","Technology","Projects","About","Contact"].map(function(item) {
+            return (
+              <a key={item} href={"#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
+                {item}
+              </a>
+            );
+          })}
+          <a href="#contact" onClick={function() { setMobileMenu(false); }} style={{ marginTop: 12, background: "#0055e9", color: "#fff", padding: "13px 0", borderRadius: 9, fontSize: 15, fontWeight: 600, textDecoration: "none", textAlign: "center", fontFamily: "'Outfit', sans-serif" }}>
+            Get a Quote
+          </a>
+        </div>
+      )}
 
       {/* ══ HERO ═════════════════════════════════════════════ */}
       <section style={{ position: "relative", height: "100vh", minHeight: 700, display: "flex", alignItems: "center", overflow: "hidden", background: "#010c22" }}>
