@@ -908,24 +908,24 @@ export default function Home() {
       {/* ══ ABOUT ════════════════════════════════════════════ */}
       <section id="about" style={{ padding: "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "center" }}>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: 48, border: "1.5px solid #dde8fa", minHeight: 420 }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: 48, border: "1.5px solid #dde8fa", minHeight: 420, display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%)", borderRadius: 24 }}>
             <style dangerouslySetInnerHTML={{ __html: `
               @keyframes fadeScaleIn {
-                0% { opacity: 0; transform: scale(0.7); }
-                60% { opacity: 1; transform: scale(1.05); }
-                100% { opacity: 1; transform: scale(1); }
+                0% { opacity: 0; transform: scale(0.5) translateY(30px); }
+                60% { opacity: 1; transform: scale(1.08) translateY(-5px); }
+                100% { opacity: 1; transform: scale(1) translateY(0); }
               }
               @keyframes logoPulse {
-                0%, 100% { filter: drop-shadow(0 8px 32px rgba(0,85,233,0.18)); }
-                50% { filter: drop-shadow(0 8px 48px rgba(0,85,233,0.45)) drop-shadow(0 0 24px rgba(56,217,255,0.3)); }
+                0%, 100% { filter: drop-shadow(0 0 15px rgba(0,85,233,0.3)) drop-shadow(0 8px 32px rgba(0,85,233,0.2)); }
+                50% { filter: drop-shadow(0 0 40px rgba(0,85,233,0.7)) drop-shadow(0 0 80px rgba(56,217,255,0.4)); }
               }
               .about-logo {
-                animation: fadeScaleIn 1.2s cubic-bezier(0.22,1,0.36,1) forwards, logoPulse 3s ease-in-out 1.2s infinite;
+                animation: fadeScaleIn 1.4s cubic-bezier(0.22,1,0.36,1) forwards, logoPulse 2.5s ease-in-out 1.4s infinite;
                 opacity: 0;
               }
             ` }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://i.ibb.co/RT8wXLXt/serviquent-logo.png" alt="Serviquent" className="about-logo" style={{ maxHeight: 420, maxWidth: "100%", objectFit: "contain" }} onError={function(e) { e.target.style.display = "none"; }} />
+            <img src="https://i.ibb.co/RT8wXLXt/serviquent-logo.png" alt="Serviquent" className="about-logo" style={{ maxHeight: 320, maxWidth: "85%", objectFit: "contain", padding: "40px" }} onError={function(e) { e.target.style.display = "none"; }} />
           </div>
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>Who We Are</div>
