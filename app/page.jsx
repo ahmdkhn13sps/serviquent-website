@@ -999,24 +999,14 @@ export default function Home() {
       {/* ══ ABOUT ════════════════════════════════════════════ */}
       <section id="about" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: 420, display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%)", borderRadius: 24 }}>
-            <style dangerouslySetInnerHTML={{ __html: `
-              @keyframes fadeScaleIn {
-                0% { opacity: 0; transform: scale(0.5) translateY(30px); }
-                60% { opacity: 1; transform: scale(1.08) translateY(-5px); }
-                100% { opacity: 1; transform: scale(1) translateY(0); }
-              }
-              @keyframes logoPulse {
-                0%, 100% { filter: drop-shadow(0 0 15px rgba(0,85,233,0.3)) drop-shadow(0 8px 32px rgba(0,85,233,0.2)); }
-                50% { filter: drop-shadow(0 0 40px rgba(0,85,233,0.7)) drop-shadow(0 0 80px rgba(56,217,255,0.4)); }
-              }
-              .about-logo {
-                animation: fadeScaleIn 1.4s cubic-bezier(0.22,1,0.36,1) forwards, logoPulse 2.5s ease-in-out 1.4s infinite;
-                opacity: 0;
-              }
-            ` }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://i.ibb.co/RT8wXLXt/serviquent-logo.png" alt="Serviquent" className="about-logo" style={{ maxHeight: 320, maxWidth: "85%", objectFit: "contain", padding: "40px" }} onError={function(e) { e.target.style.display = "none"; }} />
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: isMobile ? 280 : 420, display: "flex", alignItems: "center", justifyContent: "center", background: "#010c22", borderRadius: 24, overflow: "hidden" }}>
+            <video
+              autoPlay muted loop playsInline
+              preload="auto"
+              style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 16 }}
+            >
+              <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773634156/Untitled_design_yynbaw.mp4" type="video/mp4" />
+            </video>
           </div>
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>Who We Are</div>
