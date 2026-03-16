@@ -999,11 +999,11 @@ export default function Home() {
       {/* ══ ABOUT ════════════════════════════════════════════ */}
       <section id="about" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: isMobile ? 280 : 420, display: "flex", alignItems: "center", justifyContent: "center", background: "#010c22", borderRadius: 24, overflow: "hidden" }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: isMobile ? 280 : 420, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", borderRadius: 24, overflow: "hidden", padding: 0 }}>
             <video
               autoPlay muted loop playsInline
               preload="auto"
-              style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 16 }}
+              style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 16, display: "block" }}
             >
               <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773634156/Untitled_design_yynbaw.mp4" type="video/mp4" />
             </video>
