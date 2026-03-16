@@ -498,6 +498,14 @@ export default function Home() {
   const [form,        setForm]        = useState({ first: "", last: "", email: "", subject: "", service: "", message: "" });
   const [sent,        setSent]        = useState(false);
   const [mobileMenu,  setMobileMenu]  = useState(false);
+  const [isMobile,    setIsMobile]    = useState(false);
+
+  useEffect(function() {
+    function checkMobile() { setIsMobile(window.innerWidth <= 768); }
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return function() { window.removeEventListener("resize", checkMobile); };
+  }, []);
 
   const techRef = useRef(null);
   const fttxRef = useRef(null);
@@ -653,7 +661,7 @@ export default function Home() {
         <TelecomOverlay />
 
         {/* Hero content */}
-        <div style={{ position: "relative", zIndex: 4, padding: "0 80px", maxWidth: 940 }}>
+        <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: 940 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 20px", fontSize: 11, color: "#38d9ff", letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
             Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading  ·  Permitting
@@ -722,7 +730,7 @@ export default function Home() {
             From route feasibility and GIS mapping to construction-ready OSP drawings and regulatory permitting — our engineering solutions are built for speed, precision, and full compliance across every phase of the telecom project lifecycle.
           </p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
           {SERVICES.map(function(s) {
             return (
               <div key={s.num} className="svc-card">
@@ -953,7 +961,7 @@ export default function Home() {
       <section id="projects" style={{ padding: "100px 72px", background: "#f4f8ff" }}>
         <div style={Object.assign({}, SL, { color: "#0055e9" })}>Our Work</div>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 52 }}>Telecom Infrastructure Projects</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
           {[
             { title: "Regional Fiber Expansion",      img: "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=700", text: "Multi-market broadband expansion engineering covering OSP fiber design, GIS route planning, permitting coordination, and construction support — connecting underserved residential and commercial communities across multiple U.S. states with gigabit-capable fiber infrastructure." },
             { title: "Utility Pole Make-Ready Engineering",       img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=700", text: "Large-scale pole loading analysis and make-ready engineering programs supporting telecom operator attachment across thousands of utility poles — delivering NESC-compliant structural reports, remediation designs, and joint-use coordination packages that accelerate construction mobilization." },
@@ -1022,7 +1030,7 @@ export default function Home() {
 
       {/* ══ CONTACT ══════════════════════════════════════════ */}
       <section id="contact" style={{ padding: "100px 72px", background: "linear-gradient(145deg, #010c22 0%, #031848 55%, #0055e9 100%)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 80, alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1.2fr", gap: 80, alignItems: "start" }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Get In Touch</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5, marginBottom: 18 }}>Request a Quote for Your Required Service</h2>
@@ -1105,7 +1113,7 @@ export default function Home() {
 
       {/* ══ FOOTER ═══════════════════════════════════════════ */}
       <footer style={{ background: "#020b1d", padding: "68px 72px 32px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 60, paddingBottom: 52, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "2fr 1fr 1fr 1fr", gap: 60, paddingBottom: 52, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
           <div>
             <a href="/" onClick={function(e) { e.preventDefault(); goTop(); }} style={{ display: "inline-flex", alignItems: "center", gap: 12, textDecoration: "none", marginBottom: 18 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
