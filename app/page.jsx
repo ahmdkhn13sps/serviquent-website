@@ -593,7 +593,7 @@ export default function Home() {
           </div>
         </a>
 
-        <div style={{ display: "flex", gap: 34 }}>
+        <div style={{ display: isMobile ? "none" : "flex", gap: 34 }}>
           {["services", "engineering", "fttx", "technology", "projects", "about", "contact"].map(function(id) {
             var label = id === "fttx" ? "FTTx" : id.charAt(0).toUpperCase() + id.slice(1);
             return (
@@ -607,8 +607,17 @@ export default function Home() {
 
         <button
           onClick={function() { go("contact"); }}
-          style={{ background: "#0055e9", color: "#fff", border: "none", padding: "11px 26px", borderRadius: 9, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", boxShadow: "0 4px 18px rgba(0,85,233,0.32)", transition: "all 0.2s" }}>
+          style={{ display: isMobile ? "none" : "block", background: "#0055e9", color: "#fff", border: "none", padding: "11px 26px", borderRadius: 9, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", boxShadow: "0 4px 18px rgba(0,85,233,0.32)", transition: "all 0.2s" }}>
           Get a Quote
+        </button>
+
+        {/* Hamburger Button */}
+        <button
+          onClick={function() { setMobileMenu(!mobileMenu); }}
+          style={{ display: isMobile ? "flex" : "none", flexDirection: "column", gap: 5, background: "none", border: "none", cursor: "pointer", padding: 8 }}>
+          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
+          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
+          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
         </button>
       </nav>
 
