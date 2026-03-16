@@ -644,8 +644,14 @@ export default function Home() {
         {videoOk && (
           <video
             autoPlay muted loop playsInline
+            preload="auto"
+            x-webkit-airplay="allow"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="true"
+            x5-video-orientation="portraint"
+            webkit-playsinline="true"
             onError={function() { setVideoOk(false); }}
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1 }}
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1, pointerEvents: "none" }}
           >
             <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.mp4" type="video/mp4" />
           </video>
@@ -850,7 +856,7 @@ export default function Home() {
 
       {/* ══ GIS ══════════════════════════════════════════════ */}
       <section id="gis" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
           <div style={{ position: "relative", borderRadius: 20, overflow: "hidden", boxShadow: "0 24px 72px rgba(12,30,74,0.13)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="https://images.unsplash.com/photo-1581092921461-7d65ca45393a?w=900" alt="GIS" style={{ width: "100%", height: 460, objectFit: "cover", display: "block" }} />
@@ -992,8 +998,8 @@ export default function Home() {
 
       {/* ══ ABOUT ════════════════════════════════════════════ */}
       <section id="about" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "center" }}>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: 48, border: "1.5px solid #dde8fa", minHeight: 420, display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%)", borderRadius: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: 420, display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%)", borderRadius: 24 }}>
             <style dangerouslySetInnerHTML={{ __html: `
               @keyframes fadeScaleIn {
                 0% { opacity: 0; transform: scale(0.5) translateY(30px); }
@@ -1039,7 +1045,7 @@ export default function Home() {
 
       {/* ══ CONTACT ══════════════════════════════════════════ */}
       <section id="contact" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "linear-gradient(145deg, #010c22 0%, #031848 55%, #0055e9 100%)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1.2fr", gap: 80, alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 80, alignItems: "start" }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Get In Touch</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5, marginBottom: 18 }}>Request a Quote for Your Required Service</h2>
