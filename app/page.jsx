@@ -638,7 +638,7 @@ export default function Home() {
       )}
 
       {/* ══ HERO ═════════════════════════════════════════════ */}
-      <section style={{ position: "relative", height: "100vh", minHeight: 700, display: "flex", alignItems: "center", overflow: "hidden", background: "#010c22" }}>
+      <section style={{ position: "relative", height: "100vh", minHeight: isMobile ? 600 : 700, display: "flex", alignItems: "center", overflow: "hidden", background: "#010c22" }}>
 
         {/* Real video background */}
         {videoOk && (
@@ -650,7 +650,7 @@ export default function Home() {
             x5-video-player-fullscreen="true"
             x5-video-orientation="portraint"
             webkit-playsinline="true"
-            onError={function() { setVideoOk(false); }}
+            onError={function() { setVideoOk(false); }} poster="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.jpg"
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1, pointerEvents: "none" }}
           >
             <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.mp4" type="video/mp4" />
@@ -672,12 +672,12 @@ export default function Home() {
           backgroundSize: "72px 72px",
         }} />
 
-        {/* Telecom canvas overlay */}
-        <TelecomOverlay />
+        {/* Telecom canvas overlay - desktop only */}
+        {!isMobile && <TelecomOverlay />}
 
         {/* Hero content */}
         <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: 940 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 20px", fontSize: 11, color: "#38d9ff", letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 16px", fontSize: isMobile ? 9 : 11, color: "#38d9ff", letterSpacing: isMobile ? 1 : 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both", flexWrap: "wrap", maxWidth: "100%" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
             Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading  ·  Permitting
           </div>
