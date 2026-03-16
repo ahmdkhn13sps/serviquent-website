@@ -578,7 +578,7 @@ export default function Home() {
       {/* ══ NAVBAR ═══════════════════════════════════════════ */}
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 500, height: 72,
-        display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 56px",
+        display: "flex", alignItems: "center", justifyContent: "space-between", padding: isMobile ? "0 20px" : "0 56px",
         background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
         boxShadow: scrolled ? "0 1px 28px rgba(12,30,74,0.09)" : "none",
         backdropFilter: scrolled ? "blur(16px)" : "none",
@@ -727,7 +727,7 @@ export default function Home() {
       </div>
 
       {/* ══ SERVICES ═════════════════════════════════════════ */}
-      <section id="services" style={{ padding: "100px 72px", background: "#f4f8ff" }}>
+      <section id="services" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60 }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>What We Do</div>
@@ -764,7 +764,7 @@ export default function Home() {
       </section>
 
       {/* ══ FTTx ═════════════════════════════════════════════ */}
-      <section id="fttx" style={{ padding: "100px 72px", background: "#fff" }} ref={fttxRef}>
+      <section id="fttx" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }} ref={fttxRef}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center", marginBottom: 72 }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>FTTx Solutions</div>
@@ -809,7 +809,7 @@ export default function Home() {
           })}
         </div>
 
-        <div style={{ marginTop: 64, background: "linear-gradient(120deg, #020e28 0%, #0a2266 100%)", borderRadius: 20, padding: "48px 56px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 40 }}>
+        <div style={{ marginTop: 64, background: "linear-gradient(120deg, #020e28 0%, #0a2266 100%)", borderRadius: 20, padding: isMobile ? "32px 20px" : "48px 56px", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 40 }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Start Your FTTx Project</div>
             <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(22px, 2.5vw, 34px)", fontWeight: 800, color: "#fff" }}>
@@ -830,11 +830,11 @@ export default function Home() {
       </section>
 
       {/* ══ LIFECYCLE ════════════════════════════════════════ */}
-      <section id="engineering" style={{ padding: "100px 72px", background: "#f4f8ff" }}>
+      <section id="engineering" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
         <div style={Object.assign({}, SL, { color: "#0055e9" })}>Our Process</div>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 14 }}>Fiber Network Engineering Lifecycle</h2>
         <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.75, maxWidth: 520, marginBottom: 72 }}>Every Serviquent engagement follows a proven, structured engineering lifecycle — ensuring that every deliverable is accurate, compliant, and construction-ready at each stage from initial concept through final network turn-up.</p>
-        <div style={{ position: "relative", display: "flex" }}>
+        <div style={{ position: "relative", display: "flex", flexWrap: isMobile ? "wrap" : "nowrap", gap: isMobile ? 24 : 0 }}>
           <div style={{ position: "absolute", top: 28, left: "8%", right: "8%", height: 2, background: "linear-gradient(90deg, #0055e9, #38d9ff, #0055e9)" }} />
           {LIFECYCLE.map(function(s) {
             return (
@@ -849,7 +849,7 @@ export default function Home() {
       </section>
 
       {/* ══ GIS ══════════════════════════════════════════════ */}
-      <section id="gis" style={{ padding: "100px 72px", background: "#fff" }}>
+      <section id="gis" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "center" }}>
           <div style={{ position: "relative", borderRadius: 20, overflow: "hidden", boxShadow: "0 24px 72px rgba(12,30,74,0.13)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -890,7 +890,7 @@ export default function Home() {
       </section>
 
       {/* ══ TECHNOLOGY ═══════════════════════════════════════ */}
-      <section id="technology" style={{ padding: "100px 72px", background: "#010c22" }} ref={techRef}>
+      <section id="technology" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#010c22" }} ref={techRef}>
         <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Our Stack</div>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5, marginBottom: 14 }}>Engineering Technology Ecosystem</h2>
         <p style={{ color: "rgba(255,255,255,0.48)", fontSize: 15, lineHeight: 1.75, maxWidth: 500, marginBottom: 60 }}>Serviquent engineers are certified and proficient across the full suite of industry-leading telecom engineering, GIS, and structural analysis platforms — ensuring every deliverable meets the highest standards of accuracy, interoperability, and regulatory compliance.</p>
@@ -967,7 +967,7 @@ export default function Home() {
       </section>
 
       {/* ══ PROJECTS ═════════════════════════════════════════ */}
-      <section id="projects" style={{ padding: "100px 72px", background: "#f4f8ff" }}>
+      <section id="projects" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
         <div style={Object.assign({}, SL, { color: "#0055e9" })}>Our Work</div>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 52 }}>Telecom Infrastructure Projects</h2>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
@@ -991,7 +991,7 @@ export default function Home() {
       </section>
 
       {/* ══ ABOUT ════════════════════════════════════════════ */}
-      <section id="about" style={{ padding: "100px 72px", background: "#fff" }}>
+      <section id="about" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "center" }}>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: 48, border: "1.5px solid #dde8fa", minHeight: 420, display: "flex", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%)", borderRadius: 24 }}>
             <style dangerouslySetInnerHTML={{ __html: `
@@ -1038,7 +1038,7 @@ export default function Home() {
       </section>
 
       {/* ══ CONTACT ══════════════════════════════════════════ */}
-      <section id="contact" style={{ padding: "100px 72px", background: "linear-gradient(145deg, #010c22 0%, #031848 55%, #0055e9 100%)" }}>
+      <section id="contact" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "linear-gradient(145deg, #010c22 0%, #031848 55%, #0055e9 100%)" }}>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1.2fr", gap: 80, alignItems: "start" }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Get In Touch</div>
