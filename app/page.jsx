@@ -641,20 +641,20 @@ export default function Home() {
       <section style={{ position: "relative", height: "100vh", minHeight: isMobile ? 600 : 700, display: "flex", alignItems: "center", overflow: "hidden", background: "#010c22" }}>
 
         {/* Real video background */}
-        {videoOk && (
+        {/* Video - desktop and android */}
+        {!isMobile && videoOk && (
           <video
             autoPlay muted loop playsInline
             preload="auto"
-            x-webkit-airplay="allow"
-            x5-video-player-type="h5"
-            x5-video-player-fullscreen="true"
-            x5-video-orientation="portraint"
-            webkit-playsinline="true"
-            onError={function() { setVideoOk(false); }} poster="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.jpg"
+            onError={function() { setVideoOk(false); }}
             style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1, pointerEvents: "none" }}
           >
             <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.mp4" type="video/mp4" />
           </video>
+        )}
+        {/* iPhone fallback - static image from video */}
+        {isMobile && (
+          <div style={{ position: "absolute", inset: 0, zIndex: 1, backgroundImage: "url(https://res.cloudinary.com/dhtwtfbul/video/upload/so_0,w_1200/v1773114165/hero_uvqdpd.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
         )}
 
         {/* Dark overlay */}
