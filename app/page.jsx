@@ -829,7 +829,7 @@ export default function Home() {
             onClick={function() { go("contact"); }}
             onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 28px rgba(56,217,255,0.4)"; }}
             onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
-            style={{ background: "#38d9ff", color: "#010c22", border: "none", padding: "15px 36px", borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: "'Outfit', sans-serif", whiteSpace: "nowrap", flexShrink: 0, transition: "all 0.2s" }}>
+            style={{ background: "#38d9ff", color: "#010c22", border: "none", padding: "15px 36px", borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: "'Outfit', sans-serif", whiteSpace: "nowrap", flexShrink: 0, whiteSpace: "nowrap", flexShrink: 0, transition: "all 0.2s" }}>
             Request FTTx Quote →
           </button>
         </div>
@@ -1022,7 +1022,17 @@ export default function Home() {
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>Who We Are</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(26px, 3vw, 44px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 20 }}>About Serviquent Prime Solutions</h2>
             <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 14 }}>Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm providing a comprehensive suite of services spanning FTTx network design, outside plant (OSP) fiber engineering, GIS-based network planning, make-ready and pole loading analysis, permitting and regulatory coordination, and end-to-end broadband network development.</p>
-            <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 36 }}>With deep technical expertise across wireline, wireless, and hybrid access domains, Serviquent serves a broad ecosystem of clients — including Tier 1 carriers, regional ISPs, electric cooperatives, municipal utilities, and infrastructure investors. Our engineers combine field experience, advanced engineering software proficiency, and regulatory knowledge to empower every client to build robust, scalable, and future-ready connectivity solutions that stand up to the demands of tomorrow's broadband landscape.</p>
+            <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 28 }}>With deep technical expertise across wireline, wireless, and hybrid access domains, Serviquent serves a broad ecosystem of clients — including Tier 1 carriers, regional ISPs, electric cooperatives, municipal utilities, and infrastructure investors. Our engineers combine field experience, advanced engineering software proficiency, and regulatory knowledge to empower every client to build robust, scalable, and future-ready connectivity solutions that stand up to the demands of tomorrow's broadband landscape.</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32, padding: "20px 24px", background: "#f4f8ff", borderRadius: 14, border: "1px solid #e4ecf8" }}>
+              <a href="mailto:info@serviquent.com" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: "#eef3ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>📧</div>
+                <span style={{ fontSize: 14, color: "#0055e9", fontWeight: 600 }}>info@serviquent.com</span>
+              </a>
+              <a href="tel:+13073173044" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: "#eef3ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>📞</div>
+                <span style={{ fontSize: 14, color: "#0055e9", fontWeight: 600 }}>(307) 317-3044</span>
+              </a>
+            </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
               {[
                 { icon: "🛰️", t: "GIS-First Approach",    d: "Every network design is grounded in verified geospatial data — integrating parcel records, utility easements, terrain models, and address-level demand analysis to produce field-accurate engineering deliverables." },
