@@ -495,7 +495,7 @@ export default function Home() {
   const [visibleTech, setVisibleTech] = useState(false);
   const [visibleFttx, setVisibleFttx] = useState(false);
   const [videoOk,     setVideoOk]     = useState(true);
-  const [form,        setForm]        = useState({ first: "", last: "", email: "", subject: "", service: "", message: "" });
+  const [form,        setForm]        = useState({ first: "", last: "", company: "", email: "", subject: "", service: "", message: "" });
   const [sent,        setSent]        = useState(false);
   const [mobileMenu,  setMobileMenu]  = useState(false);
   const [isMobile,    setIsMobile]    = useState(false);
@@ -543,8 +543,8 @@ export default function Home() {
   const [error,   setError]   = useState("");
 
   async function submit() {
-    if (!form.first || !form.email || !form.message) {
-      setError("Please fill in your name, email, and message.");
+    if (!form.first || !form.email || !form.company || !form.message) {
+      setError("Please fill in your name, company, email, and message.");
       return;
     }
     setSending(true);
