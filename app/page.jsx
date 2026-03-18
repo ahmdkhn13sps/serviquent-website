@@ -699,7 +699,7 @@ export default function Home() {
             })}
           </div>
 
-          <div style={{ display: "flex", gap: 16, marginTop: 40, animation: "heroUp 0.8s 0.44s ease both", animationFillMode: "both" }}>
+          <div style={{ display: "flex", gap: 16, marginTop: 40, flexWrap: "wrap", flexDirection: isMobile ? "column" : "row", animation: "heroUp 0.8s 0.44s ease both", animationFillMode: "both" }}>
             <button
               onClick={function() { go("contact"); }}
               onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 40px rgba(0,85,233,0.55)"; }}
@@ -770,7 +770,7 @@ export default function Home() {
       </section>
 
       {/* ══ FTTx ═════════════════════════════════════════════ */}
-      <section id="fttx" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }} ref={fttxRef}>
+      <section id="fttx" style={{ padding: isMobile ? "48px 16px" : "100px 72px", background: "#fff" }} ref={fttxRef}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center", marginBottom: 72 }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>FTTx Solutions</div>
@@ -790,7 +790,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: isMobile ? 12 : 20 }}>
           {FTTX_DATA.map(function(f, i) {
             return (
               <div key={f.code} className="fttx-card" style={{ animation: visibleFttx ? ("fttxIn 0.5s " + (i * 0.1) + "s ease both") : "none", opacity: visibleFttx ? 1 : 0 }}>
@@ -1049,6 +1049,9 @@ export default function Home() {
           <div>
             <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Get In Touch</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5, marginBottom: 18 }}>Request a Quote for Your Required Service</h2>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(56,217,255,0.1)", border: "1px solid rgba(56,217,255,0.25)", borderRadius: 100, padding: "6px 16px", marginBottom: 16 }}>
+              <span style={{ fontSize: 13, color: "#38d9ff", fontWeight: 700, letterSpacing: 1 }}>SERVIQUENT PRIME SOLUTIONS</span>
+            </div>
             <p style={{ color: "rgba(255,255,255,0.58)", fontSize: 15, lineHeight: 1.85, marginBottom: 44 }}>Tell us about your project and our engineering team will respond within one business day. Whether you need a preliminary route design, a full FTTx engineering package, pole loading analysis, or permitting support — we are ready to scope your project and deliver.</p>
             {[
               { icon: "📧", label: "Email",        val: "info@serviquent.com", href: "mailto:info@serviquent.com" },
@@ -1144,7 +1147,7 @@ export default function Home() {
           </div>
           {[
             { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }]) },
-            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "#" }] },
+            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }] },
             { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
