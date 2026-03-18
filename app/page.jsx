@@ -860,7 +860,7 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
           <div style={{ position: "relative", borderRadius: 20, overflow: "hidden", boxShadow: "0 24px 72px rgba(12,30,74,0.13)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1581092921461-7d65ca45393a?w=900" alt="GIS" style={{ width: "100%", height: 460, objectFit: "cover", display: "block" }} />
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=900" alt="GIS" style={{ width: "100%", height: 460, objectFit: "cover", display: "block" }} />
             <div style={{ position: "absolute", bottom: 28, left: 28, right: 28, background: "rgba(1,12,34,0.9)", backdropFilter: "blur(12px)", borderRadius: 12, padding: "22px 28px", display: "flex", gap: 36, border: "1px solid rgba(56,217,255,0.15)" }}>
               {[["GIS", "Driven Network Design"], ["3D", "Spatial Modeling"], ["Real-Time", "Real-Time Analytics"]].map(function(pair) {
                 return (
