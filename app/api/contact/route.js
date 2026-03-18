@@ -59,14 +59,7 @@ export async function POST(request) {
                       <span style="font-size: 15px; color: #0c1e4a; font-weight: 600;">${company || "—"}</span>
                     </td>
                   </tr>
-                  <tr>
-                    <td style="padding: 10px 0; border-bottom: 1px solid #f0f5ff;">
-                      <span style="font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Company</span>
-                    </td>
-                    <td style="padding: 10px 0; border-bottom: 1px solid #f0f5ff;">
-                      <span style="font-size: 15px; color: #0c1e4a; font-weight: 600;">${company || "—"}</span>
-                    </td>
-                  </tr>
+
                   <tr>
                     <td style="padding: 10px 0; border-bottom: 1px solid #f0f5ff;">
                       <span style="font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Email</span>
