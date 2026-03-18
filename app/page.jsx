@@ -558,7 +558,7 @@ export default function Home() {
       const data = await res.json();
       if (data.success) {
         setSent(true);
-        setForm({ first: "", last: "", email: "", subject: "", service: "", message: "" });
+        setForm({ first: "", last: "", company: "", email: "", subject: "", service: "", message: "" });
       } else {
         setError("Something went wrong. Please try again or email us directly.");
       }
@@ -1090,6 +1090,10 @@ export default function Home() {
                     <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 7 }}>Last Name</label>
                     <input className="inp" placeholder="Last Name" value={form.last} onChange={function(e) { setForm(Object.assign({}, form, { last: e.target.value })); }} />
                   </div>
+                </div>
+                <div style={{ marginBottom: 14 }}>
+                  <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 7 }}>Company Name *</label>
+                  <input className="inp" type="text" placeholder="Your Company Name" value={form.company} onChange={function(e) { setForm(Object.assign({}, form, { company: e.target.value })); }} />
                 </div>
                 <div style={{ marginBottom: 14 }}>
                   <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 7 }}>Email</label>
