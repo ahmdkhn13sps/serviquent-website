@@ -12,6 +12,9 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "IYNcAqxWKTCV4ZLQVscqQLPrroGE-u2eiB0nIgJACOk",
+  },
   openGraph: {
     title: "Telecom Infrastructure Engineering | Serviquent Prime Solutions",
     description: "Specialized telecom infrastructure engineering firm delivering FTTx, OSP fiber engineering, GIS planning, pole loading analysis, and broadband infrastructure development across the USA.",
@@ -62,6 +65,7 @@ export default function RootLayout({ children }) {
         <meta name="geo.region" content="US" />
         <meta name="geo.placename" content="Cheyenne, Wyoming" />
         <meta name="language" content="English" />
+        <meta name="google-site-verification" content="IYNcAqxWKTCV4ZLQVscqQLPrroGE-u2eiB0nIgJACOk" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-2H6TM2DHGT"
