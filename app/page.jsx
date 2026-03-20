@@ -679,7 +679,7 @@ export default function Home() {
         {!isMobile && <TelecomOverlay />}
 
         {/* Hero content */}
-        <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: isMobile ? "100%" : 1100, width: "100%" }}>
+        <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: isMobile ? "100%" : 1100, width: "100%", paddingTop: isMobile ? 100 : 0 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 16px", fontSize: isMobile ? 9 : 11, color: "#38d9ff", letterSpacing: isMobile ? 1 : 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both", flexWrap: "wrap", maxWidth: "100%" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
             Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading  ·  Permitting
@@ -692,7 +692,7 @@ export default function Home() {
             Fiber Networks
           </h1>
 
-          <p style={{ marginTop: 28, fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 580, fontWeight: 400, animation: "heroUp 0.8s 0.26s ease both", animationFillMode: "both" }}>
+          <p style={{ marginTop: 28, fontSize: isMobile ? 14 : 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 580, fontWeight: 400, animation: "heroUp 0.8s 0.26s ease both", animationFillMode: "both" }}>
             Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development — serving operators, ISPs, and utilities across the United States.
           </p>
 

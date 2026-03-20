@@ -1,9 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Careers() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", position: "", experience: "", message: "", resume: null });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(function() {
+    function checkMobile() { setIsMobile(window.innerWidth <= 768); }
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return function() { window.removeEventListener("resize", checkMobile); };
+  }, []);
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -47,7 +55,7 @@ export default function Careers() {
       <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
       {/* Nav */}
-      <nav style={{ background: "#fff", borderBottom: "1px solid #e4ecf8", padding: "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, zIndex: 100 }}>
+      <nav style={{ background: "#fff", borderBottom: "1px solid #e4ecf8", padding: isMobile ? "0 20px" : "0 48px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, zIndex: 100 }}>
         <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="https://i.ibb.co/RT8wXLXt/serviquent-logo.png" alt="Serviquent" style={{ height: 40 }} />
@@ -56,7 +64,7 @@ export default function Careers() {
       </nav>
 
       {/* Hero */}
-      <div style={{ background: "linear-gradient(135deg, #010c22 0%, #0a2266 100%)", padding: "80px 48px", textAlign: "center" }}>
+      <div style={{ background: "linear-gradient(135deg, #010c22 0%, #0a2266 100%)", padding: isMobile ? "60px 20px" : "80px 48px", textAlign: "center" }}>
         <div style={{ fontSize: 11, color: "#38d9ff", letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 16 }}>Join Our Team</div>
         <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 800, color: "#fff", margin: "0 0 20px", letterSpacing: -1 }}>
           Careers at Serviquent
@@ -70,7 +78,7 @@ export default function Careers() {
       </div>
 
       {/* Open Positions */}
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "60px 24px 0" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: isMobile ? "40px 16px 0" : "60px 24px 0" }}>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 36, fontWeight: 800, color: "#0c1e4a", marginBottom: 8 }}>Open Positions</h2>
         <p style={{ color: "#60748b", fontSize: 15, marginBottom: 32 }}>We&apos;re always looking for talented engineers to join our growing team.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16, marginBottom: 60 }}>
@@ -94,8 +102,8 @@ export default function Careers() {
       </div>
 
       {/* Application Form */}
-      <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px 80px" }}>
-        <div style={{ background: "#fff", borderRadius: 20, padding: "48px", border: "1.5px solid #e4ecf8", boxShadow: "0 8px 40px rgba(0,85,233,0.08)" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: isMobile ? "0 16px 60px" : "0 24px 80px" }}>
+        <div style={{ background: "#fff", borderRadius: 20, padding: isMobile ? "24px 20px" : "48px", border: "1.5px solid #e4ecf8", boxShadow: "0 8px 40px rgba(0,85,233,0.08)" }}>
           <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 36, fontWeight: 800, color: "#0c1e4a", marginBottom: 8 }}>Apply Now</h2>
           <p style={{ color: "#60748b", fontSize: 15, marginBottom: 36 }}>Fill in the form below and attach your resume. We&apos;ll get back to you within 2-3 business days.</p>
 
@@ -108,7 +116,7 @@ export default function Careers() {
           ) : (
             <div>
               {/* Row 1 */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16, marginBottom: 16 }}>
                 <div>
                   <label style={{ fontSize: 11, fontWeight: 700, color: "#60748b", letterSpacing: 1, textTransform: "uppercase", display: "block", marginBottom: 8 }}>Full Name *</label>
                   <input value={form.name} onChange={function(e) { setForm(function(f) { return Object.assign({}, f, { name: e.target.value }); }); }} placeholder="John Smith" style={{ width: "100%", padding: "13px 16px", borderRadius: 10, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", boxSizing: "border-box" }} />
@@ -120,7 +128,7 @@ export default function Careers() {
               </div>
 
               {/* Row 2 */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16, marginBottom: 16 }}>
                 <div>
                   <label style={{ fontSize: 11, fontWeight: 700, color: "#60748b", letterSpacing: 1, textTransform: "uppercase", display: "block", marginBottom: 8 }}>Phone Number</label>
                   <input value={form.phone} onChange={function(e) { setForm(function(f) { return Object.assign({}, f, { phone: e.target.value }); }); }} placeholder="+1 (000) 000-0000" style={{ width: "100%", padding: "13px 16px", borderRadius: 10, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", boxSizing: "border-box" }} />
