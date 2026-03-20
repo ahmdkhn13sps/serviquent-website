@@ -469,7 +469,7 @@ function Modal({ s, onClose }) {
       >
         <div style={{ position: "relative", height: 260 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(5,15,42,0.92) 0%, transparent 50%)" }} />
           <div style={{ position: "absolute", bottom: 28, left: 32, right: 60 }}>
             <div style={{ fontSize: 11, color: "#38d9ff", letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 8 }}>{s.num}</div>
@@ -573,9 +573,97 @@ export default function Home() {
 
   var SL = { fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 14 };
 
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.serviquent.com/#organization",
+        "name": "Serviquent Prime Solutions",
+        "url": "https://www.serviquent.com",
+        "logo": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
+        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, permitting coordination, and broadband infrastructure development across the United States.",
+        "telephone": "+13073173044",
+        "email": "info@serviquent.com",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Cheyenne",
+            "addressRegion": "WY",
+            "addressCountry": "US"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Gurugram",
+            "addressRegion": "Haryana",
+            "addressCountry": "IN"
+          }
+        ],
+        "sameAs": [
+          "https://www.serviquent.com"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "United States"
+        },
+        "serviceType": [
+          "OSP Fiber Engineering",
+          "FTTx Network Design",
+          "GIS Network Planning",
+          "Pole Loading Analysis",
+          "Make Ready Engineering",
+          "Telecom Permitting",
+          "ISP Network Design"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.serviquent.com/#website",
+        "url": "https://www.serviquent.com",
+        "name": "Serviquent Prime Solutions",
+        "publisher": {
+          "@id": "https://www.serviquent.com/#organization"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.serviquent.com/#service",
+        "name": "Serviquent Prime Solutions",
+        "image": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
+        "url": "https://www.serviquent.com",
+        "telephone": "+13073173044",
+        "email": "info@serviquent.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cheyenne",
+          "addressRegion": "WY",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.1400,
+          "longitude": -104.8202
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "sameAs": ["https://www.serviquent.com"]
+      }
+    ]
+  };
+
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif", overflowX: "hidden", maxWidth: "100vw" }}>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
 
       {/* ══ NAVBAR ═══════════════════════════════════════════ */}
       <nav style={{
@@ -754,7 +842,7 @@ export default function Home() {
               <div key={s.num} className="svc-card">
                 <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.img} alt={s.title} className="svc-img" />
+                  <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} className="svc-img" />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(2,13,42,0.6) 0%, transparent 60%)" }} />
                   <div style={{ position: "absolute", top: 16, left: 16, fontSize: 11, color: "#38d9ff", letterSpacing: 2.5, fontWeight: 700, background: "rgba(0,85,233,0.3)", border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "4px 13px" }}>{s.num}</div>
                 </div>
@@ -862,7 +950,7 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
           <div style={{ position: "relative", borderRadius: 20, overflow: "hidden", boxShadow: "0 24px 72px rgba(12,30,74,0.13)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=900" alt="GIS" style={{ width: "100%", height: 460, objectFit: "cover", display: "block" }} />
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=900" alt="GIS Network Planning - Serviquent Prime Solutions Geospatial Engineering" style={{ width: "100%", height: 460, objectFit: "cover", display: "block" }} />
             <div style={{ position: "absolute", bottom: 28, left: 28, right: 28, background: "rgba(1,12,34,0.9)", backdropFilter: "blur(12px)", borderRadius: 12, padding: "22px 28px", display: "flex", gap: 36, border: "1px solid rgba(56,217,255,0.15)" }}>
               {[["GIS", "Driven Network Design"], ["3D", "Spatial Modeling"], ["Real-Time", "Real-Time Analytics"]].map(function(pair) {
                 return (
@@ -988,7 +1076,7 @@ export default function Home() {
             return (
               <div key={p.title} className="proj-card">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.img} alt={p.title} style={{ width: "100%", height: 210, objectFit: "cover", display: "block" }} />
+                <img src={p.img} alt={"Serviquent Project: " + p.title + " - Telecom Infrastructure"} style={{ width: "100%", height: 210, objectFit: "cover", display: "block" }} />
                 <div style={{ padding: "24px 26px 28px" }}>
                   <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 22, fontWeight: 700, color: "#0c1e4a", marginBottom: 10 }}>{p.title}</h3>
                   <p style={{ fontSize: 14, color: "#60748b", lineHeight: 1.7 }}>{p.text}</p>
