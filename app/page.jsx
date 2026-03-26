@@ -771,7 +771,7 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: isMobile ? "100%" : 1100, width: "100%", paddingTop: isMobile ? 100 : 0 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 16px", fontSize: isMobile ? 9 : 11, color: "#38d9ff", letterSpacing: isMobile ? 1 : 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both", flexWrap: "wrap", maxWidth: "100%" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
-            Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading Analysis · Permitting · MRE 
+            Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading Analysis · Permitting 
           </div>
 
           <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(46px, 6.2vw, 84px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: -1, color: "#fff", animation: "heroUp 0.8s 0.12s ease both", animationFillMode: "both" }}>
@@ -782,11 +782,11 @@ export default function Home() {
           </h1>
 
           <p style={{ marginTop: 28, fontSize: isMobile ? 14 : 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 580, fontWeight: 400, animation: "heroUp 0.8s 0.26s ease both", animationFillMode: "both" }}>
-            Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development — serving operators, ISPs, and utilities across the United States.
+            Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development — serving operators, ISPs, and utilities across the United States and Worldwide.
           </p>
 
           <div style={{ display: "flex", gap: 10, marginTop: 28, flexWrap: "wrap", animation: "heroUp 0.8s 0.34s ease both", animationFillMode: "both" }}>
-            {["FTTx", "HFC", "OSP", "5G", "GIS", "MRE", PLA, "GIS", "PERMITTING"].map(function(tag) {
+            {["FTTH", "FTTB", "FTTC", "FTTN", "HFC", "OSP", "5G", "GIS"].map(function(tag) {
               return <span key={tag} className="hero-tag">{tag}</span>;
             })}
           </div>
