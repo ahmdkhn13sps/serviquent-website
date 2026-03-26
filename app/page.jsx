@@ -771,7 +771,7 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: isMobile ? "100%" : 1100, width: "100%", paddingTop: isMobile ? 100 : 0 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 16px", fontSize: isMobile ? 9 : 11, color: "#38d9ff", letterSpacing: isMobile ? 1 : 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both", flexWrap: "wrap", maxWidth: "100%" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
-            Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading  ·  Permitting
+            Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading Analysis · Permitting · MRE 
           </div>
 
           <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(46px, 6.2vw, 84px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: -1, color: "#fff", animation: "heroUp 0.8s 0.12s ease both", animationFillMode: "both" }}>
@@ -1231,6 +1231,45 @@ export default function Home() {
               </div>
             )}
           </div>
+        </div>
+      </section>
+
+            {/* ══ LINKEDIN SECTION ══════════════════════════════════ */}
+      <section style={{ background: "linear-gradient(135deg, #0A66C2 0%, #004182 100%)", padding: isMobile ? "48px 20px" : "64px 80px", textAlign: "center" }}>
+        <div style={{ maxWidth: 700, margin: "0 auto" }}>
+          <div style={{ marginBottom: 24, display: "flex", justifyContent: "center" }}>
+            <svg width="56" height="56" viewBox="0 0 24 24" fill="white" opacity="0.9">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? 32 : 48, fontWeight: 800, color: "#fff", margin: "0 0 16px", letterSpacing: -0.5 }}>
+            Follow Us on LinkedIn
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: isMobile ? 14 : 16, lineHeight: 1.8, marginBottom: 36, maxWidth: 520, margin: "0 auto 36px" }}>
+            Stay updated with our latest projects, industry insights, and engineering innovations. Connect with the Serviquent team on LinkedIn.
+          </p>
+          <a
+            href="https://www.linkedin.com/company/serviquent/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: 12,
+              background: "#fff", color: "#0A66C2",
+              padding: isMobile ? "14px 28px" : "16px 40px",
+              borderRadius: 12, fontSize: isMobile ? 15 : 17,
+              fontWeight: 700, textDecoration: "none",
+              fontFamily: "'Outfit', sans-serif",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+              transition: "all 0.2s"
+            }}
+            onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 16px 48px rgba(0,0,0,0.3)"; }}
+            onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.2)"; }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Visit Our LinkedIn Page
+          </a>
         </div>
       </section>
 
