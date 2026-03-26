@@ -786,7 +786,7 @@ export default function Home() {
           </p>
 
           <div style={{ display: "flex", gap: 10, marginTop: 28, flexWrap: "wrap", animation: "heroUp 0.8s 0.34s ease both", animationFillMode: "both" }}>
-            {["FTTH", "FTTB", "FTTC", "FTTN", "HFC", "OSP", "5G", "GIS"].map(function(tag) {
+            {["FTTx", "HFC", "OSP", "5G", "GIS", "MRE", PLA, "GIS", "PERMITTING"].map(function(tag) {
               return <span key={tag} className="hero-tag">{tag}</span>;
             })}
           </div>
