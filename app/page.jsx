@@ -771,7 +771,7 @@ export default function Home() {
         <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: isMobile ? "100%" : 1100, width: "100%", paddingTop: isMobile ? 100 : 0 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 16px", fontSize: isMobile ? 9 : 11, color: "#38d9ff", letterSpacing: isMobile ? 1 : 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both", flexWrap: "wrap", maxWidth: "100%" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
-            Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading Analysis · Permitting 
+            Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading  ·  Permitting
           </div>
 
           <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(46px, 6.2vw, 84px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: -1, color: "#fff", animation: "heroUp 0.8s 0.12s ease both", animationFillMode: "both" }}>
@@ -782,7 +782,7 @@ export default function Home() {
           </h1>
 
           <p style={{ marginTop: 28, fontSize: isMobile ? 14 : 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 580, fontWeight: 400, animation: "heroUp 0.8s 0.26s ease both", animationFillMode: "both" }}>
-            Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development — serving operators, ISPs, and utilities across the United States and Worldwide.
+            Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development — serving operators, ISPs, and utilities across the United States.
           </p>
 
           <div style={{ display: "flex", gap: 10, marginTop: 28, flexWrap: "wrap", animation: "heroUp 0.8s 0.34s ease both", animationFillMode: "both" }}>
@@ -1309,15 +1309,26 @@ export default function Home() {
         <div style={{ paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <p style={{ fontSize: 13, color: "#344055" }}>© 2025 Serviquent Pvt Ltd. All Rights Reserved.</p>
           <div style={{ display: "flex", gap: 10 }}>
-            {["in", "X", "f"].map(function(s) {
-              return (
-                <a key={s} href="#" style={{ width: 38, height: 38, borderRadius: 9, border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", color: "#4a6080", fontSize: 14, textDecoration: "none", transition: "all 0.2s" }}
-                  onMouseEnter={function(e) { e.currentTarget.style.borderColor = "#38d9ff"; e.currentTarget.style.color = "#38d9ff"; }}
-                  onMouseLeave={function(e) { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.color = "#4a6080"; }}>
-                  {s}
-                </a>
-              );
-            })}
+            <>
+              {/* LinkedIn */}
+              <a href="https://www.linkedin.com/company/serviquent/" target="_blank" rel="noopener noreferrer"
+                style={{ width: 38, height: 38, borderRadius: 9, background: "#0A66C2", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none", transition: "all 0.2s" }}
+                onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-3px)"; }}
+                onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              {/* Instagram */}
+              <a href="https://www.instagram.com/serviquent/" target="_blank" rel="noopener noreferrer"
+                style={{ width: 38, height: 38, borderRadius: 9, background: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none", transition: "all 0.2s" }}
+                onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-3px)"; }}
+                onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+            </>
           </div>
         </div>
       </footer>
