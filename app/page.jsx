@@ -1234,7 +1234,98 @@ export default function Home() {
         </div>
       </section>
 
-            {/* ══ LINKEDIN SECTION ══════════════════════════════════ */}
+                  {/* ══ SERVIQUENT GLOBAL SOLUTIONS ═══════════════════════ */}
+      <section style={{ background: "linear-gradient(135deg, #f4f8ff 0%, #eef3ff 100%)", padding: isMobile ? "60px 20px" : "80px 80px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 40 : 80, alignItems: "center" }}>
+          
+          {/* Left - Content */}
+          <div>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#eef3ff", border: "1px solid #ccd9f8", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#0055e9", display: "inline-block" }} />
+              <span style={{ fontSize: 11, color: "#0055e9", fontWeight: 700, letterSpacing: 2, textTransform: "uppercase" }}>Our Sister Company</span>
+            </div>
+            <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? 36 : 52, fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 16, lineHeight: 1.1 }}>
+              Serviquent<br />
+              <span style={{ color: "#0055e9" }}>Global Solutions</span>
+            </h2>
+            <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.85, marginBottom: 24 }}>
+              Serviquent Global Solutions is our dedicated BPO and IT services division — delivering world-class business process outsourcing, technology solutions, and digital transformation services to enterprises across the globe.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 32 }}>
+              {[
+                { icon: "🖥️", t: "IT Services" },
+                { icon: "📞", t: "BPO Solutions" },
+                { icon: "☁️", t: "Cloud Services" },
+                { icon: "🔒", t: "Cybersecurity" },
+                { icon: "📊", t: "Data Analytics" },
+                { icon: "🤖", t: "AI & Automation" },
+              ].map(function(item) {
+                return (
+                  <div key={item.t} style={{ display: "flex", alignItems: "center", gap: 10, background: "#fff", borderRadius: 10, padding: "12px 16px", border: "1.5px solid #e4ecf8" }}>
+                    <span style={{ fontSize: 18 }}>{item.icon}</span>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: "#0c1e4a" }}>{item.t}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <a
+              href="https://www.serviquentgs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#0055e9", color: "#fff", padding: isMobile ? "14px 28px" : "15px 36px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none", fontFamily: "'Outfit', sans-serif", boxShadow: "0 8px 32px rgba(0,85,233,0.3)", transition: "all 0.2s" }}
+              onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 40px rgba(0,85,233,0.45)"; }}
+              onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,85,233,0.3)"; }}
+            >
+              Visit Serviquent Global Solutions
+              <span style={{ fontSize: 18 }}>→</span>
+            </a>
+          </div>
+
+          {/* Right - Card */}
+          <div style={{ background: "linear-gradient(135deg, #010c22 0%, #0a2266 100%)", borderRadius: 24, padding: isMobile ? "36px 24px" : "48px", position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: -40, right: -40, width: 200, height: 200, borderRadius: "50%", background: "rgba(0,85,233,0.15)" }} />
+            <div style={{ position: "absolute", bottom: -60, left: -30, width: 160, height: 160, borderRadius: "50%", background: "rgba(56,217,255,0.08)" }} />
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <div style={{ fontSize: 48, marginBottom: 20 }}>🌐</div>
+              <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 28, fontWeight: 800, color: "#fff", marginBottom: 12 }}>
+                Global BPO & IT Services
+              </h3>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, lineHeight: 1.8, marginBottom: 28 }}>
+                From customer support and back-office operations to enterprise IT solutions and digital transformation — Serviquent Global Solutions empowers businesses worldwide.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {[
+                  "24/7 Customer Support Services",
+                  "Enterprise IT Infrastructure",
+                  "Cloud Migration & Management",
+                  "Digital Transformation Consulting",
+                  "Data Processing & Analytics",
+                ].map(function(item) {
+                  return (
+                    <div key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#38d9ff", flexShrink: 0 }} />
+                      <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 13 }}>{item}</span>
+                    </div>
+                  );
+                })}
+              </div>
+              <a
+                href="https://www.serviquentgs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: "inline-flex", alignItems: "center", gap: 8, marginTop: 28, background: "rgba(56,217,255,0.15)", border: "1px solid rgba(56,217,255,0.3)", borderRadius: 9, padding: "11px 22px", color: "#38d9ff", fontSize: 13, fontWeight: 600, textDecoration: "none", transition: "all 0.2s" }}
+                onMouseEnter={function(e) { e.currentTarget.style.background = "rgba(56,217,255,0.25)"; }}
+                onMouseLeave={function(e) { e.currentTarget.style.background = "rgba(56,217,255,0.15)"; }}
+              >
+                🌐 serviquentgs.com →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══ LINKEDIN SECTION ══════════════════════════════════ */}
       <section style={{ background: "linear-gradient(135deg, #0A66C2 0%, #004182 100%)", padding: isMobile ? "48px 20px" : "64px 80px", textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <div style={{ marginBottom: 24, display: "flex", justifyContent: "center" }}>
@@ -1291,7 +1382,7 @@ export default function Home() {
           </div>
           {[
             { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }]) },
-            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }] },
+            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "Serviquent Global Solutions", h: "https://www.serviquentgs.com" }] },
             { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
