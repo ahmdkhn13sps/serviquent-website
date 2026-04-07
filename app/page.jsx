@@ -461,13 +461,13 @@ function Modal({ s, onClose }) {
   return (
     <div
       onClick={onClose}
-      style={{ position: "fixed", inset: 0, background: "rgba(5,15,42,0.78)", backdropFilter: "blur(8px)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, animation: "fadeIn 0.2s ease" }}
+      style={{ position: "fixed", inset: 0, background: "rgba(5,15,42,0.78)", backdropFilter: "blur(8px)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", padding: 12, animation: "fadeIn 0.2s ease" }}
     >
       <div
         onClick={function(e) { e.stopPropagation(); }}
-        style={{ background: "#fff", borderRadius: 20, maxWidth: 660, width: "100%", overflow: "hidden", boxShadow: "0 40px 100px rgba(5,15,42,0.3)", animation: "slideUp 0.3s ease" }}
+        style={{ background: "#fff", borderRadius: 20, maxWidth: 660, width: "100%", maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 40px 100px rgba(5,15,42,0.3)", animation: "slideUp 0.3s ease" }}
       >
-        <div style={{ position: "relative", height: 260 }}>
+        <div style={{ position: "relative", height: 200, flexShrink: 0 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(5,15,42,0.92) 0%, transparent 50%)" }} />
@@ -475,11 +475,11 @@ function Modal({ s, onClose }) {
             <div style={{ fontSize: 11, color: "#38d9ff", letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 8 }}>{s.num}</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 30, fontWeight: 800, color: "#fff", margin: 0 }}>{s.title}</h2>
           </div>
-          <button onClick={onClose} style={{ position: "absolute", top: 18, right: 18, width: 38, height: 38, borderRadius: "50%", background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <button onClick={onClose} style={{ position: "absolute", top: 12, right: 12, width: 44, height: 44, borderRadius: "50%", background: "rgba(0,0,0,0.6)", border: "2px solid rgba(255,255,255,0.6)", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10, fontWeight: 700, lineHeight: 1 }}>
             ×
           </button>
         </div>
-        <div style={{ padding: "32px 36px 40px" }}>
+        <div style={{ padding: "24px 24px 32px", overflowY: "auto", flex: 1 }}>
           <p style={{ fontSize: 16, lineHeight: 1.85, color: "#374569" }}>{s.full}</p>
           <button onClick={onClose} style={{ marginTop: 28, background: "#0055e9", color: "#fff", border: "none", padding: "13px 32px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
             Close
