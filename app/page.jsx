@@ -461,13 +461,13 @@ function Modal({ s, onClose }) {
   return (
     <div
       onClick={onClose}
-      style={{ position: "fixed", inset: 0, background: "rgba(5,15,42,0.78)", backdropFilter: "blur(8px)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", padding: 12, animation: "fadeIn 0.2s ease" }}
+      style={{ position: "fixed", inset: 0, background: "rgba(5,15,42,0.78)", backdropFilter: "blur(8px)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, animation: "fadeIn 0.2s ease" }}
     >
       <div
         onClick={function(e) { e.stopPropagation(); }}
-        style={{ background: "#fff", borderRadius: 20, maxWidth: 660, width: "100%", maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 40px 100px rgba(5,15,42,0.3)", animation: "slideUp 0.3s ease" }}
+        style={{ background: "#fff", borderRadius: 20, maxWidth: 660, width: "100%", overflow: "hidden", boxShadow: "0 40px 100px rgba(5,15,42,0.3)", animation: "slideUp 0.3s ease" }}
       >
-        <div style={{ position: "relative", height: 200, flexShrink: 0 }}>
+        <div style={{ position: "relative", height: 260 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(5,15,42,0.92) 0%, transparent 50%)" }} />
@@ -475,11 +475,11 @@ function Modal({ s, onClose }) {
             <div style={{ fontSize: 11, color: "#38d9ff", letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 8 }}>{s.num}</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 30, fontWeight: 800, color: "#fff", margin: 0 }}>{s.title}</h2>
           </div>
-          <button onClick={onClose} style={{ position: "absolute", top: 12, right: 12, width: 44, height: 44, borderRadius: "50%", background: "rgba(0,0,0,0.6)", border: "2px solid rgba(255,255,255,0.6)", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10, fontWeight: 700, lineHeight: 1 }}>
+          <button onClick={onClose} style={{ position: "absolute", top: 18, right: 18, width: 38, height: 38, borderRadius: "50%", background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
             ×
           </button>
         </div>
-        <div style={{ padding: "24px 24px 32px", overflowY: "auto", flex: 1 }}>
+        <div style={{ padding: "32px 36px 40px" }}>
           <p style={{ fontSize: 16, lineHeight: 1.85, color: "#374569" }}>{s.full}</p>
           <button onClick={onClose} style={{ marginTop: 28, background: "#0055e9", color: "#fff", border: "none", padding: "13px 32px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
             Close
@@ -581,26 +581,16 @@ export default function Home() {
         "@type": "Organization",
         "@id": "https://www.serviquent.com/#organization",
         "name": "Serviquent Prime Solutions",
-        "alternateName": "Serviquent",
         "url": "https://www.serviquent.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
-          "width": 512,
-          "height": 512
-        },
-        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, make-ready engineering, permitting coordination, and broadband infrastructure development across the United States.",
+        "logo": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
+        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, permitting coordination, and broadband infrastructure development across the United States.",
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
-        "foundingDate": "2024",
-        "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 10 },
         "address": [
           {
             "@type": "PostalAddress",
-            "streetAddress": "Cheyenne",
             "addressLocality": "Cheyenne",
             "addressRegion": "WY",
-            "postalCode": "82001",
             "addressCountry": "US"
           },
           {
@@ -610,72 +600,31 @@ export default function Home() {
             "addressCountry": "IN"
           }
         ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+13073173044",
-            "contactType": "customer service",
-            "email": "info@serviquent.com",
-            "availableLanguage": "English"
-          },
-          {
-            "@type": "ContactPoint",
-            "email": "career@serviquent.com",
-            "contactType": "Human Resources"
-          }
-        ],
         "sameAs": [
           "https://www.serviquent.com",
-          "https://www.linkedin.com/company/serviquent/",
-          "https://www.instagram.com/serviquent/"
+          "https://www.linkedin.com/company/serviquent/"
         ],
         "areaServed": {
           "@type": "Country",
           "name": "United States"
         },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Telecom Engineering Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OSP Fiber Engineering", "description": "End-to-end outside plant fiber design including aerial, underground, and hybrid network configurations." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "FTTx Network Design", "description": "Complete FTTH, FTTB, FTTC, and FTTN passive optical network engineering." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GIS Network Planning", "description": "Geospatial mapping, route optimization, and permit-ready asset inventories using ArcGIS and QGIS." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Make-Ready Engineering", "description": "Pre-construction assessments, clearance analysis, and NESC-compliant make-ready packages." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pole Engineering & Inspection", "description": "Structural pole loading analysis using O-Calc Pro and SPIDAcalc." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Permitting & Regulatory Coordination", "description": "End-to-end telecom construction permits, ROW applications, and municipal approvals." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ISP Network Design", "description": "Complete ISP network architecture for fiber, HFC, and fixed wireless platforms." } }
-          ]
-        }
+        "serviceType": [
+          "OSP Fiber Engineering",
+          "FTTx Network Design",
+          "GIS Network Planning",
+          "Pole Loading Analysis",
+          "Make Ready Engineering",
+          "Telecom Permitting",
+          "ISP Network Design"
+        ]
       },
       {
         "@type": "WebSite",
         "@id": "https://www.serviquent.com/#website",
         "url": "https://www.serviquent.com",
         "name": "Serviquent Prime Solutions",
-        "description": "Telecom Infrastructure Engineering",
-        "publisher": { "@id": "https://www.serviquent.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.serviquent.com/#contact",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.serviquent.com/#webpage",
-        "url": "https://www.serviquent.com",
-        "name": "Telecom Infrastructure Engineering | Serviquent Prime Solutions",
-        "description": "Serviquent Prime Solutions delivers FTTx network design, OSP fiber engineering, GIS network planning, and broadband infrastructure development across the USA.",
-        "isPartOf": { "@id": "https://www.serviquent.com/#website" },
-        "about": { "@id": "https://www.serviquent.com/#organization" },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.serviquent.com" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.serviquent.com/#services" },
-            { "@type": "ListItem", "position": 3, "name": "Careers", "item": "https://www.serviquent.com/careers" },
-            { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://www.serviquent.com/#contact" }
-          ]
+        "publisher": {
+          "@id": "https://www.serviquent.com/#organization"
         }
       },
       {
@@ -687,8 +636,6 @@ export default function Home() {
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
         "priceRange": "$$",
-        "currenciesAccepted": "USD",
-        "paymentAccepted": "Invoice, Bank Transfer",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Cheyenne",
@@ -706,15 +653,10 @@ export default function Home() {
           "opens": "09:00",
           "closes": "18:00"
         },
-        "sameAs": [
-          "https://www.linkedin.com/company/serviquent/",
-          "https://www.instagram.com/serviquent/"
-        ]
+        "sameAs": ["https://www.serviquent.com"]
       }
     ]
   };
-
-
 
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif", overflowX: "hidden", maxWidth: "100vw" }}>
