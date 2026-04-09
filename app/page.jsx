@@ -581,16 +581,26 @@ export default function Home() {
         "@type": "Organization",
         "@id": "https://www.serviquent.com/#organization",
         "name": "Serviquent Prime Solutions",
+        "alternateName": "Serviquent",
         "url": "https://www.serviquent.com",
-        "logo": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
-        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, permitting coordination, and broadband infrastructure development across the United States.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, make-ready engineering, permitting coordination, and broadband infrastructure development across the United States.",
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
+        "foundingDate": "2024",
+        "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 10 },
         "address": [
           {
             "@type": "PostalAddress",
+            "streetAddress": "Cheyenne",
             "addressLocality": "Cheyenne",
             "addressRegion": "WY",
+            "postalCode": "82001",
             "addressCountry": "US"
           },
           {
@@ -600,31 +610,72 @@ export default function Home() {
             "addressCountry": "IN"
           }
         ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+13073173044",
+            "contactType": "customer service",
+            "email": "info@serviquent.com",
+            "availableLanguage": "English"
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "career@serviquent.com",
+            "contactType": "Human Resources"
+          }
+        ],
         "sameAs": [
           "https://www.serviquent.com",
-          "https://www.linkedin.com/company/serviquent/"
+          "https://www.linkedin.com/company/serviquent/",
+          "https://www.instagram.com/serviquent/"
         ],
         "areaServed": {
           "@type": "Country",
           "name": "United States"
         },
-        "serviceType": [
-          "OSP Fiber Engineering",
-          "FTTx Network Design",
-          "GIS Network Planning",
-          "Pole Loading Analysis",
-          "Make Ready Engineering",
-          "Telecom Permitting",
-          "ISP Network Design"
-        ]
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Telecom Engineering Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OSP Fiber Engineering", "description": "End-to-end outside plant fiber design including aerial, underground, and hybrid network configurations." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "FTTx Network Design", "description": "Complete FTTH, FTTB, FTTC, and FTTN passive optical network engineering." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GIS Network Planning", "description": "Geospatial mapping, route optimization, and permit-ready asset inventories using ArcGIS and QGIS." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Make-Ready Engineering", "description": "Pre-construction assessments, clearance analysis, and NESC-compliant make-ready packages." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pole Engineering & Inspection", "description": "Structural pole loading analysis using O-Calc Pro and SPIDAcalc." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Permitting & Regulatory Coordination", "description": "End-to-end telecom construction permits, ROW applications, and municipal approvals." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ISP Network Design", "description": "Complete ISP network architecture for fiber, HFC, and fixed wireless platforms." } }
+          ]
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://www.serviquent.com/#website",
         "url": "https://www.serviquent.com",
         "name": "Serviquent Prime Solutions",
-        "publisher": {
-          "@id": "https://www.serviquent.com/#organization"
+        "description": "Telecom Infrastructure Engineering",
+        "publisher": { "@id": "https://www.serviquent.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.serviquent.com/#contact",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.serviquent.com/#webpage",
+        "url": "https://www.serviquent.com",
+        "name": "Telecom Infrastructure Engineering | Serviquent Prime Solutions",
+        "description": "Serviquent Prime Solutions delivers FTTx network design, OSP fiber engineering, GIS network planning, and broadband infrastructure development across the USA.",
+        "isPartOf": { "@id": "https://www.serviquent.com/#website" },
+        "about": { "@id": "https://www.serviquent.com/#organization" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.serviquent.com" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.serviquent.com/#services" },
+            { "@type": "ListItem", "position": 3, "name": "Careers", "item": "https://www.serviquent.com/careers" },
+            { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://www.serviquent.com/#contact" }
+          ]
         }
       },
       {
@@ -636,6 +687,8 @@ export default function Home() {
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
         "priceRange": "$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": "Invoice, Bank Transfer",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Cheyenne",
@@ -653,10 +706,15 @@ export default function Home() {
           "opens": "09:00",
           "closes": "18:00"
         },
-        "sameAs": ["https://www.serviquent.com"]
+        "sameAs": [
+          "https://www.linkedin.com/company/serviquent/",
+          "https://www.instagram.com/serviquent/"
+        ]
       }
     ]
   };
+
+
 
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif", overflowX: "hidden", maxWidth: "100vw" }}>
