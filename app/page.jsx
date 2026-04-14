@@ -450,8 +450,128 @@ function LogoStrip({ items, dark, fast }) {
   );
 }
 
+/* ─── QUOTE MODAL ────────────────────────────────────────── */
+function QuoteModal({ form, setForm, sent, setSent, sending, setSending, error, setError, onClose }) {
+  useEffect(function() {
+    function fn(e) { if (e.key === "Escape") onClose(); }
+    document.addEventListener("keydown", fn);
+    document.body.style.overflow = "hidden";
+    return function() { 
+      document.removeEventListener("keydown", fn); 
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  async function submit() {
+    if (!form.first || !form.email || !form.company || !form.message) {
+      setError("Please fill in your name, company, email, and message.");
+      return;
+    }
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+        setForm({ first: "", last: "", company: "", phone: "", email: "", subject: "", service: "", message: "" });
+      } else {
+        setError("Something went wrong. Please try again or email us directly.");
+      }
+    } catch (e) {
+      setError("Network error. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  }
+
+  return (
+    <div onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(5,15,42,0.85)", backdropFilter: "blur(8px)", zIndex: 99999, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
+      <div onClick={function(e) { e.stopPropagation(); }} style={{ background: "#fff", borderRadius: 20, width: "100%", maxWidth: 580, maxHeight: "90vh", overflowY: "auto", boxShadow: "0 40px 100px rgba(0,0,0,0.4)" }}>
+        
+        {/* Header */}
+        <div style={{ background: "linear-gradient(135deg, #010c22, #0055e9)", padding: "24px 28px", borderRadius: "20px 20px 0 0", display: "flex", justifyContent: "space-between", alignItems: "center", position: "sticky", top: 0, zIndex: 1 }}>
+          <div>
+            <div style={{ fontSize: 11, color: "#38d9ff", letterSpacing: 2, fontWeight: 700, textTransform: "uppercase", marginBottom: 4 }}>Serviquent Prime Solutions</div>
+            <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 24, fontWeight: 800, color: "#fff", margin: 0 }}>Request a Quote</h2>
+          </div>
+          <button onClick={onClose} style={{ width: 40, height: 40, borderRadius: "50%", background: "rgba(255,255,255,0.15)", border: "1.5px solid rgba(255,255,255,0.3)", color: "#fff", fontSize: 20, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700 }}>×</button>
+        </div>
+
+        {/* Body */}
+        <div style={{ padding: "24px 28px" }}>
+          {sent ? (
+            <div style={{ textAlign: "center", padding: "40px 0" }}>
+              <div style={{ fontSize: 56, marginBottom: 16 }}>✅</div>
+              <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 28, fontWeight: 800, color: "#0c1e4a", marginBottom: 12 }}>Message Sent!</h3>
+              <p style={{ color: "#60748b", fontSize: 15, marginBottom: 24 }}>Our engineering team will respond within one business day.</p>
+              <button onClick={onClose} style={{ background: "#0055e9", color: "#fff", border: "none", padding: "12px 32px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer" }}>Close</button>
+            </div>
+          ) : (
+            <div>
+              {/* Row 1: First + Last */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
+                <div>
+                  <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 6 }}>First Name *</label>
+                  <input id="quote-modal-first" autoFocus value={form.first} onChange={function(e) { setForm(Object.assign({}, form, { first: e.target.value })); }} placeholder="John" style={{ width: "100%", padding: "11px 14px", borderRadius: 9, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", boxSizing: "border-box" }} />
+                </div>
+                <div>
+                  <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 6 }}>Last Name</label>
+                  <input value={form.last} onChange={function(e) { setForm(Object.assign({}, form, { last: e.target.value })); }} placeholder="Smith" style={{ width: "100%", padding: "11px 14px", borderRadius: 9, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", boxSizing: "border-box" }} />
+                </div>
+              </div>
+              {/* Company */}
+              <div style={{ marginBottom: 12 }}>
+                <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 6 }}>Company Name *</label>
+                <input value={form.company} onChange={function(e) { setForm(Object.assign({}, form, { company: e.target.value })); }} placeholder="Your Company" style={{ width: "100%", padding: "11px 14px", borderRadius: 9, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", boxSizing: "border-box" }} />
+              </div>
+              {/* Phone + Email */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
+                <div>
+                  <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 6 }}>Phone</label>
+                  <input value={form.phone} onChange={function(e) { setForm(Object.assign({}, form, { phone: e.target.value })); }} placeholder="+1 (000) 000-0000" type="tel" style={{ width: "100%", padding: "11px 14px", borderRadius: 9, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", boxSizing: "border-box" }} />
+                </div>
+                <div>
+                  <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 6 }}>Email *</label>
+                  <input value={form.email} onChange={function(e) { setForm(Object.assign({}, form, { email: e.target.value })); }} placeholder="your@email.com" type="email" style={{ width: "100%", padding: "11px 14px", borderRadius: 9, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", boxSizing: "border-box" }} />
+                </div>
+              </div>
+              {/* Service */}
+              <div style={{ marginBottom: 12 }}>
+                <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 6 }}>Service Required</label>
+                <select value={form.service} onChange={function(e) { setForm(Object.assign({}, form, { service: e.target.value })); }} style={{ width: "100%", padding: "11px 14px", borderRadius: 9, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", background: "#fff", boxSizing: "border-box" }}>
+                  <option value="">Select a service...</option>
+                  {SERVICES.map(function(s) { return <option key={s.num}>{s.title}</option>; })}
+                  <option>FTTH Engineering</option>
+                  <option>FTTB Engineering</option>
+                  <option>FTTC / FTTN Engineering</option>
+                </select>
+              </div>
+              {/* Message */}
+              <div style={{ marginBottom: 16 }}>
+                <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 6 }}>Your Message *</label>
+                <textarea value={form.message} onChange={function(e) { setForm(Object.assign({}, form, { message: e.target.value })); }} placeholder="Tell us about your project..." rows={4} style={{ width: "100%", padding: "11px 14px", borderRadius: 9, border: "1.5px solid #e4ecf8", fontSize: 14, outline: "none", fontFamily: "'Outfit', sans-serif", resize: "vertical", boxSizing: "border-box" }} />
+              </div>
+              {error && (
+                <div style={{ marginBottom: 12, padding: "10px 14px", background: "#fff0f0", border: "1.5px solid #ffcdd2", borderRadius: 9, color: "#c62828", fontSize: 13 }}>{error}</div>
+              )}
+              <button onClick={submit} disabled={sending} style={{ width: "100%", background: sending ? "#6b9eff" : "#0055e9", color: "#fff", border: "none", padding: 14, borderRadius: 10, fontSize: 15, fontWeight: 600, cursor: sending ? "not-allowed" : "pointer", fontFamily: "'Outfit', sans-serif", boxShadow: "0 6px 24px rgba(0,85,233,0.28)" }}>
+                {sending ? "Sending..." : "Submit Request →"}
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── SERVICE MODAL ──────────────────────────────────────── */
-function Modal({ s, onClose }) {
+function Modal({ s, onClose, setQuoteModal }) {
   useEffect(function() {
     function fn(e) { if (e.key === "Escape") onClose(); }
     document.addEventListener("keydown", fn);
@@ -467,11 +587,7 @@ function Modal({ s, onClose }) {
         onClick={function(e) { e.stopPropagation(); }}
         style={{ background: "#fff", borderRadius: 20, maxWidth: 660, width: "100%", maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 40px 100px rgba(5,15,42,0.3)", animation: "slideUp 0.3s ease" }}
       >
-        {/* Fixed close button always visible */}
-        <div style={{ display: "flex", justifyContent: "flex-end", padding: "12px 12px 0", flexShrink: 0, background: "#fff" }}>
-          <button onClick={onClose} style={{ width: 44, height: 44, borderRadius: "50%", background: "#0055e9", border: "none", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700 }}>×</button>
-        </div>
-        <div style={{ position: "relative", height: 180, flexShrink: 0 }}>
+        <div style={{ position: "relative", height: 200, flexShrink: 0 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(5,15,42,0.92) 0%, transparent 50%)" }} />
@@ -486,7 +602,7 @@ function Modal({ s, onClose }) {
         <div style={{ padding: "24px 24px 32px", overflowY: "auto", flex: 1 }}>
           <p style={{ fontSize: 16, lineHeight: 1.85, color: "#374569" }}>{s.full}</p>
           <div style={{ display: "flex", gap: 12, marginTop: 28, flexWrap: "wrap" }}>
-            <button onClick={function() { onClose(); setTimeout(function() { var el = document.getElementById("contact"); if(el) el.scrollIntoView({ behavior: "smooth" }); var inp = document.getElementById("quote-first-name"); if(inp) inp.focus(); }, 200); }} style={{ background: "#0055e9", color: "#fff", border: "none", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", flex: 1 }}>
+            <button onClick={function() { onClose(); setTimeout(function() { if(setQuoteModal) setQuoteModal(true); }, 200); }} style={{ background: "#0055e9", color: "#fff", border: "none", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", flex: 1 }}>
               Get a Quote →
             </button>
             <button onClick={onClose} style={{ background: "#f4f8ff", color: "#0c1e4a", border: "1.5px solid #e4ecf8", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
@@ -510,6 +626,7 @@ export default function Home() {
   const [sent,        setSent]        = useState(false);
   const [mobileMenu,  setMobileMenu]  = useState(false);
   const [quoteOpen,   setQuoteOpen]   = useState(false);
+  const [quoteModal,  setQuoteModal]  = useState(false);
   const [isMobile,    setIsMobile]    = useState(false);
 
   useEffect(function() {
@@ -550,13 +667,7 @@ export default function Home() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   }
   function goQuote() {
-    setQuoteOpen(true);
-    setTimeout(function() {
-      var el = document.getElementById("contact");
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-      var inp = document.getElementById("quote-first-name");
-      if (inp) inp.focus();
-    }, 100);
+    setQuoteModal(true);
   }
   function goTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
 
@@ -1506,7 +1617,20 @@ export default function Home() {
         </div>
       </footer>
 
-      {modal && <Modal s={modal} onClose={function() { setModal(null); }} />}
+      {modal && <Modal s={modal} onClose={function() { setModal(null); }} setQuoteModal={setQuoteModal} />}
+      {quoteModal && (
+        <QuoteModal
+          form={form}
+          setForm={setForm}
+          sent={sent}
+          setSent={setSent}
+          sending={sending}
+          setSending={setSending}
+          error={error}
+          setError={setError}
+          onClose={function() { setQuoteModal(false); setSent(false); setError(""); }}
+        />
+      )}
     </div>
   );
 }
