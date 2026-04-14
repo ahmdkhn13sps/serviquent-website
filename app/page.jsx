@@ -461,13 +461,17 @@ function Modal({ s, onClose }) {
   return (
     <div
       onClick={onClose}
-      style={{ position: "fixed", inset: 0, background: "rgba(5,15,42,0.78)", backdropFilter: "blur(8px)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, animation: "fadeIn 0.2s ease" }}
+      style={{ position: "fixed", inset: 0, background: "rgba(5,15,42,0.78)", backdropFilter: "blur(8px)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center", padding: 12, animation: "fadeIn 0.2s ease" }}
     >
       <div
         onClick={function(e) { e.stopPropagation(); }}
-        style={{ background: "#fff", borderRadius: 20, maxWidth: 660, width: "100%", overflow: "hidden", boxShadow: "0 40px 100px rgba(5,15,42,0.3)", animation: "slideUp 0.3s ease" }}
+        style={{ background: "#fff", borderRadius: 20, maxWidth: 660, width: "100%", maxHeight: "90vh", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 40px 100px rgba(5,15,42,0.3)", animation: "slideUp 0.3s ease" }}
       >
-        <div style={{ position: "relative", height: 260 }}>
+        {/* Fixed close button always visible */}
+        <div style={{ display: "flex", justifyContent: "flex-end", padding: "12px 12px 0", flexShrink: 0, background: "#fff" }}>
+          <button onClick={onClose} style={{ width: 44, height: 44, borderRadius: "50%", background: "#0055e9", border: "none", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700 }}>×</button>
+        </div>
+        <div style={{ position: "relative", height: 180, flexShrink: 0 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(5,15,42,0.92) 0%, transparent 50%)" }} />
@@ -475,15 +479,20 @@ function Modal({ s, onClose }) {
             <div style={{ fontSize: 11, color: "#38d9ff", letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 8 }}>{s.num}</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 30, fontWeight: 800, color: "#fff", margin: 0 }}>{s.title}</h2>
           </div>
-          <button onClick={onClose} style={{ position: "absolute", top: 18, right: 18, width: 38, height: 38, borderRadius: "50%", background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <button onClick={onClose} style={{ position: "absolute", top: 12, right: 12, width: 44, height: 44, borderRadius: "50%", background: "rgba(0,0,0,0.6)", border: "2px solid rgba(255,255,255,0.6)", color: "#fff", fontSize: 22, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10, fontWeight: 700, lineHeight: 1 }}>
             ×
           </button>
         </div>
-        <div style={{ padding: "32px 36px 40px" }}>
+        <div style={{ padding: "24px 24px 32px", overflowY: "auto", flex: 1 }}>
           <p style={{ fontSize: 16, lineHeight: 1.85, color: "#374569" }}>{s.full}</p>
-          <button onClick={onClose} style={{ marginTop: 28, background: "#0055e9", color: "#fff", border: "none", padding: "13px 32px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
-            Close
-          </button>
+          <div style={{ display: "flex", gap: 12, marginTop: 28, flexWrap: "wrap" }}>
+            <button onClick={function() { onClose(); setTimeout(function() { document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); }, 100); }} style={{ background: "#0055e9", color: "#fff", border: "none", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", flex: 1 }}>
+              Get a Quote →
+            </button>
+            <button onClick={onClose} style={{ background: "#f4f8ff", color: "#0c1e4a", border: "1.5px solid #e4ecf8", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -497,7 +506,7 @@ export default function Home() {
   const [visibleTech, setVisibleTech] = useState(false);
   const [visibleFttx, setVisibleFttx] = useState(false);
   const [videoOk,     setVideoOk]     = useState(true);
-  const [form,        setForm]        = useState({ first: "", last: "", company: "", email: "", subject: "", service: "", message: "" });
+  const [form,        setForm]        = useState({ first: "", last: "", company: "", phone: "", email: "", subject: "", service: "", message: "" });
   const [sent,        setSent]        = useState(false);
   const [mobileMenu,  setMobileMenu]  = useState(false);
   const [isMobile,    setIsMobile]    = useState(false);
@@ -560,7 +569,7 @@ export default function Home() {
       const data = await res.json();
       if (data.success) {
         setSent(true);
-        setForm({ first: "", last: "", company: "", email: "", subject: "", service: "", message: "" });
+        setForm({ first: "", last: "", company: "", phone: "", email: "", subject: "", service: "", message: "" });
       } else {
         setError("Something went wrong. Please try again or email us directly.");
       }
@@ -581,16 +590,26 @@ export default function Home() {
         "@type": "Organization",
         "@id": "https://www.serviquent.com/#organization",
         "name": "Serviquent Prime Solutions",
+        "alternateName": "Serviquent",
         "url": "https://www.serviquent.com",
-        "logo": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
-        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, permitting coordination, and broadband infrastructure development across the United States.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, make-ready engineering, permitting coordination, and broadband infrastructure development across the United States.",
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
+        "foundingDate": "2024",
+        "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 10 },
         "address": [
           {
             "@type": "PostalAddress",
+            "streetAddress": "Cheyenne",
             "addressLocality": "Cheyenne",
             "addressRegion": "WY",
+            "postalCode": "82001",
             "addressCountry": "US"
           },
           {
@@ -600,31 +619,72 @@ export default function Home() {
             "addressCountry": "IN"
           }
         ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+13073173044",
+            "contactType": "customer service",
+            "email": "info@serviquent.com",
+            "availableLanguage": "English"
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "career@serviquent.com",
+            "contactType": "Human Resources"
+          }
+        ],
         "sameAs": [
           "https://www.serviquent.com",
-          "https://www.linkedin.com/company/serviquent/"
+          "https://www.linkedin.com/company/serviquent/",
+          "https://www.instagram.com/serviquent/"
         ],
         "areaServed": {
           "@type": "Country",
           "name": "United States"
         },
-        "serviceType": [
-          "OSP Fiber Engineering",
-          "FTTx Network Design",
-          "GIS Network Planning",
-          "Pole Loading Analysis",
-          "Make Ready Engineering",
-          "Telecom Permitting",
-          "ISP Network Design"
-        ]
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Telecom Engineering Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OSP Fiber Engineering", "description": "End-to-end outside plant fiber design including aerial, underground, and hybrid network configurations." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "FTTx Network Design", "description": "Complete FTTH, FTTB, FTTC, and FTTN passive optical network engineering." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GIS Network Planning", "description": "Geospatial mapping, route optimization, and permit-ready asset inventories using ArcGIS and QGIS." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Make-Ready Engineering", "description": "Pre-construction assessments, clearance analysis, and NESC-compliant make-ready packages." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pole Engineering & Inspection", "description": "Structural pole loading analysis using O-Calc Pro and SPIDAcalc." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Permitting & Regulatory Coordination", "description": "End-to-end telecom construction permits, ROW applications, and municipal approvals." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ISP Network Design", "description": "Complete ISP network architecture for fiber, HFC, and fixed wireless platforms." } }
+          ]
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://www.serviquent.com/#website",
         "url": "https://www.serviquent.com",
         "name": "Serviquent Prime Solutions",
-        "publisher": {
-          "@id": "https://www.serviquent.com/#organization"
+        "description": "Telecom Infrastructure Engineering",
+        "publisher": { "@id": "https://www.serviquent.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.serviquent.com/#contact",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.serviquent.com/#webpage",
+        "url": "https://www.serviquent.com",
+        "name": "Telecom Infrastructure Engineering | Serviquent Prime Solutions",
+        "description": "Serviquent Prime Solutions delivers FTTx network design, OSP fiber engineering, GIS network planning, and broadband infrastructure development across the USA.",
+        "isPartOf": { "@id": "https://www.serviquent.com/#website" },
+        "about": { "@id": "https://www.serviquent.com/#organization" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.serviquent.com" },
+            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.serviquent.com/#services" },
+            { "@type": "ListItem", "position": 3, "name": "Careers", "item": "https://www.serviquent.com/careers" },
+            { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://www.serviquent.com/#contact" }
+          ]
         }
       },
       {
@@ -636,6 +696,8 @@ export default function Home() {
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
         "priceRange": "$$",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": "Invoice, Bank Transfer",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Cheyenne",
@@ -653,10 +715,15 @@ export default function Home() {
           "opens": "09:00",
           "closes": "18:00"
         },
-        "sameAs": ["https://www.serviquent.com"]
+        "sameAs": [
+          "https://www.linkedin.com/company/serviquent/",
+          "https://www.instagram.com/serviquent/"
+        ]
       }
     ]
   };
+
+
 
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif", overflowX: "hidden", maxWidth: "100vw" }}>
@@ -677,7 +744,7 @@ export default function Home() {
       }}>
         <a href="/" onClick={function(e) { e.preventDefault(); goTop(); }} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", cursor: "pointer" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://i.ibb.co/RT8wXLXt/serviquent-logo.png" alt="logo" style={{ height: 42 }} onError={function(e) { e.target.style.display = "none"; }} />
+          <img src="/favicon.ico" alt="logo" style={{ height: 42, width: 42, borderRadius: 8 }} onError={function(e) { e.target.style.display = "none"; }} />
           <div>
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: 20, letterSpacing: 0.5, color: scrolled ? "#0c1e4a" : "#fff", lineHeight: 1 }}>SERVIQUENT</div>
             <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: scrolled ? "#0055e9" : "#38d9ff", fontWeight: 600 }}>Prime Solutions</div>
@@ -716,9 +783,9 @@ export default function Home() {
       {/* Mobile Menu Dropdown */}
       {mobileMenu && (
         <div style={{ position: "fixed", top: 72, left: 0, right: 0, background: "#fff", zIndex: 499, padding: "20px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", flexDirection: "column", gap: 4 }}>
-          {["Services","Engineering","FTTx","Technology","Projects","About","Contact"].map(function(item) {
+          {["Services","Engineering","FTTx","Technology","Projects","About","Careers","Contact"].map(function(item) {
             return (
-              <a key={item} href={item === "Careers" ? "/careers" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
+              <a key={item} href={item === "Careers" ? "/careers" : item === "Contact" ? "#contact" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
                 {item}
               </a>
             );
@@ -1194,6 +1261,10 @@ export default function Home() {
                 <div style={{ marginBottom: 14 }}>
                   <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 7 }}>Company Name *</label>
                   <input className="inp" type="text" placeholder="Your Company Name" value={form.company} onChange={function(e) { setForm(Object.assign({}, form, { company: e.target.value })); }} />
+                </div>
+                <div style={{ marginBottom: 14 }}>
+                  <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 7 }}>Phone Number</label>
+                  <input className="inp" type="tel" placeholder="+1 (000) 000-0000" value={form.phone} onChange={function(e) { setForm(Object.assign({}, form, { phone: e.target.value })); }} />
                 </div>
                 <div style={{ marginBottom: 14 }}>
                   <label style={{ fontSize: 11, color: "#94a3b8", letterSpacing: 1, textTransform: "uppercase", fontWeight: 600, display: "block", marginBottom: 7 }}>Email</label>
