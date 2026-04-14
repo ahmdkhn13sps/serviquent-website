@@ -486,7 +486,7 @@ function Modal({ s, onClose }) {
         <div style={{ padding: "24px 24px 32px", overflowY: "auto", flex: 1 }}>
           <p style={{ fontSize: 16, lineHeight: 1.85, color: "#374569" }}>{s.full}</p>
           <div style={{ display: "flex", gap: 12, marginTop: 28, flexWrap: "wrap" }}>
-            <button onClick={function() { onClose(); setTimeout(function() { document.getElementById("contact").scrollIntoView({ behavior: "smooth" }); }, 100); }} style={{ background: "#0055e9", color: "#fff", border: "none", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", flex: 1 }}>
+            <button onClick={function() { onClose(); setTimeout(function() { var el = document.getElementById("contact"); if(el) el.scrollIntoView({ behavior: "smooth" }); var inp = document.getElementById("quote-first-name"); if(inp) inp.focus(); }, 200); }} style={{ background: "#0055e9", color: "#fff", border: "none", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", flex: 1 }}>
               Get a Quote →
             </button>
             <button onClick={onClose} style={{ background: "#f4f8ff", color: "#0c1e4a", border: "1.5px solid #e4ecf8", padding: "13px 28px", borderRadius: 10, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
@@ -509,6 +509,7 @@ export default function Home() {
   const [form,        setForm]        = useState({ first: "", last: "", company: "", phone: "", email: "", subject: "", service: "", message: "" });
   const [sent,        setSent]        = useState(false);
   const [mobileMenu,  setMobileMenu]  = useState(false);
+  const [quoteOpen,   setQuoteOpen]   = useState(false);
   const [isMobile,    setIsMobile]    = useState(false);
 
   useEffect(function() {
@@ -547,6 +548,15 @@ export default function Home() {
   function go(id) {
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+  function goQuote() {
+    setQuoteOpen(true);
+    setTimeout(function() {
+      var el = document.getElementById("contact");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      var inp = document.getElementById("quote-first-name");
+      if (inp) inp.focus();
+    }, 100);
   }
   function goTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
 
@@ -765,7 +775,7 @@ export default function Home() {
         </div>
 
         <button
-          onClick={function() { go("contact"); }}
+          onClick={goQuote}
           style={{ display: isMobile ? "none" : "block", background: "#0055e9", color: "#fff", border: "none", padding: "11px 26px", borderRadius: 9, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", boxShadow: "0 4px 18px rgba(0,85,233,0.32)", transition: "all 0.2s" }}>
           Get a Quote
         </button>
@@ -860,7 +870,7 @@ export default function Home() {
 
           <div style={{ display: "flex", gap: 16, marginTop: 40, flexWrap: "wrap", flexDirection: isMobile ? "column" : "row", animation: "heroUp 0.8s 0.44s ease both", animationFillMode: "both" }}>
             <button
-              onClick={function() { go("contact"); }}
+              onClick={goQuote}
               onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 40px rgba(0,85,233,0.55)"; }}
               onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,85,233,0.45)"; }}
               style={{ background: "#0055e9", color: "#fff", border: "none", padding: "15px 36px", borderRadius: 10, fontSize: 15, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", boxShadow: "0 8px 32px rgba(0,85,233,0.45)", transition: "all 0.2s" }}>
@@ -1239,7 +1249,7 @@ export default function Home() {
             })}
           </div>
 
-          <div style={{ background: "#fff", borderRadius: 20, padding: 44, boxShadow: "0 32px 80px rgba(0,0,0,0.25)" }}>
+          <div style={{ background: "#fff", borderRadius: 20, padding: isMobile ? "24px 16px" : 44, boxShadow: quoteOpen ? "0 0 0 3px #0055e9, 0 32px 80px rgba(0,0,0,0.25)" : "0 32px 80px rgba(0,0,0,0.25)", transition: "box-shadow 0.4s" }}>
             {sent ? (
               <div style={{ textAlign: "center", padding: "52px 0" }}>
                 <div style={{ fontSize: 56, marginBottom: 18 }}>✅</div>
