@@ -1467,6 +1467,101 @@ export default function Home() {
 
       
 
+            {/* ══ COMPANY PORTFOLIO ════════════════════════════════ */}
+      <section style={{ background: "#fff", padding: isMobile ? "60px 20px" : "80px 80px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 40 : 80, alignItems: "center" }}>
+
+          {/* Left - Content */}
+          <div>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#eef3ff", border: "1px solid #ccd9f8", borderRadius: 100, padding: "6px 16px", marginBottom: 20 }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#0055e9", display: "inline-block" }} />
+              <span style={{ fontSize: 11, color: "#0055e9", fontWeight: 700, letterSpacing: 2, textTransform: "uppercase" }}>Company Portfolio</span>
+            </div>
+            <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? 36 : 52, fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 16, lineHeight: 1.1 }}>
+              Download Our<br />
+              <span style={{ color: "#0055e9" }}>Company Profile</span>
+            </h2>
+            <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.85, marginBottom: 28 }}>
+              Get a comprehensive overview of Serviquent Prime Solutions — our services, technology expertise, engineering capabilities, and everything you need to know about working with us.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 32 }}>
+              {[
+                "Company overview & core capabilities",
+                "Detailed service descriptions",
+                "FTTx network design portfolio",
+                "Technology & tools expertise",
+                "Engineering lifecycle process",
+                "Contact & engagement information",
+              ].map(function(item) {
+                return (
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ width: 20, height: 20, borderRadius: "50%", background: "#eef3ff", border: "1.5px solid #0055e9", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <span style={{ fontSize: 10, color: "#0055e9", fontWeight: 700 }}>✓</span>
+                    </div>
+                    <span style={{ fontSize: 14, color: "#374569" }}>{item}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <a
+              href="/Serviquent_Company_Portfolio.pptx"
+              download="Serviquent_Prime_Solutions_Portfolio.pptx"
+              style={{ display: "inline-flex", alignItems: "center", gap: 12, background: "#0055e9", color: "#fff", padding: isMobile ? "14px 28px" : "16px 36px", borderRadius: 12, fontSize: isMobile ? 15 : 16, fontWeight: 700, textDecoration: "none", fontFamily: "'Outfit', sans-serif", boxShadow: "0 8px 32px rgba(0,85,233,0.3)", transition: "all 0.2s" }}
+              onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 40px rgba(0,85,233,0.45)"; }}
+              onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,85,233,0.3)"; }}
+            >
+              <span style={{ fontSize: 20 }}>⬇️</span>
+              Download Company Portfolio
+            </a>
+            <div style={{ marginTop: 12, fontSize: 12, color: "#94a3b8" }}>PowerPoint format · 12 slides · Free download</div>
+          </div>
+
+          {/* Right - Preview Card */}
+          <div style={{ position: "relative" }}>
+            <div style={{ background: "linear-gradient(135deg, #010c22 0%, #0a2266 100%)", borderRadius: 20, padding: isMobile ? "32px 24px" : "48px", overflow: "hidden", position: "relative" }}>
+              <div style={{ position: "absolute", top: -40, right: -40, width: 180, height: 180, borderRadius: "50%", background: "rgba(0,85,233,0.2)" }} />
+              <div style={{ position: "absolute", bottom: -30, left: -20, width: 140, height: 140, borderRadius: "50%", background: "rgba(56,217,255,0.08)" }} />
+              <div style={{ position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 11, color: "#38d9ff", letterSpacing: 3, fontWeight: 700, textTransform: "uppercase", marginBottom: 16 }}>12 Professional Slides</div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 24 }}>
+                  {[
+                    { n: "01", t: "Cover & Overview" },
+                    { n: "02", t: "Who We Are" },
+                    { n: "03", t: "Services Overview" },
+                    { n: "04", t: "OSP Engineering" },
+                    { n: "05", t: "GIS Planning" },
+                    { n: "06", t: "MRE & Pole Eng." },
+                    { n: "07", t: "FTTx Design" },
+                    { n: "08", t: "Permitting & ISP" },
+                    { n: "09", t: "Tech Expertise" },
+                    { n: "10", t: "Project Lifecycle" },
+                    { n: "11", t: "Why Choose Us" },
+                    { n: "12", t: "Contact & CTA" },
+                  ].map(function(sl) {
+                    return (
+                      <div key={sl.n} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.06)", borderRadius: 8, padding: "8px 12px" }}>
+                        <span style={{ fontSize: 10, color: "#38d9ff", fontWeight: 700, minWidth: 20 }}>{sl.n}</span>
+                        <span style={{ fontSize: 10, color: "rgba(255,255,255,0.75)" }}>{sl.t}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <a
+                  href="/Serviquent_Company_Portfolio.pptx"
+                  download="Serviquent_Prime_Solutions_Portfolio.pptx"
+                  style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "#38d9ff", color: "#010c22", padding: "14px 0", borderRadius: 10, fontSize: 15, fontWeight: 700, textDecoration: "none", fontFamily: "'Outfit', sans-serif", transition: "all 0.2s" }}
+                  onMouseEnter={function(e) { e.currentTarget.style.background = "#60e5ff"; }}
+                  onMouseLeave={function(e) { e.currentTarget.style.background = "#38d9ff"; }}
+                >
+                  ⬇️ Download Free Portfolio
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* ══ SERVIQUENT GLOBAL SOLUTIONS ═══════════════════════ */}
       <section style={{ background: "linear-gradient(135deg, #010c22 0%, #0a2266 100%)", padding: isMobile ? "60px 20px" : "80px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 40 : 80, alignItems: "center" }}>
