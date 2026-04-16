@@ -883,6 +883,7 @@ export default function Home() {
             );
           })}
           <a href="/careers" className={scrolled ? "nav-a-dark" : "nav-a"}>Careers</a>
+          <a href="/portfolio" className={scrolled ? "nav-a-dark" : "nav-a"}>Portfolio</a>
         </div>
 
         <button
@@ -904,9 +905,9 @@ export default function Home() {
       {/* Mobile Menu Dropdown */}
       {mobileMenu && (
         <div style={{ position: "fixed", top: 72, left: 0, right: 0, background: "#fff", zIndex: 499, padding: "20px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", flexDirection: "column", gap: 4 }}>
-          {["Services","Engineering","FTTx","Technology","Projects","About","Careers","Contact"].map(function(item) {
+          {["Services","Engineering","FTTx","Technology","Projects","About","Careers","Portfolio","Contact"].map(function(item) {
             return (
-              <a key={item} href={item === "Careers" ? "/careers" : item === "Contact" ? "#contact" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
+              <a key={item} href={item === "Careers" ? "/careers" : item === "Portfolio" ? "/portfolio" : item === "Contact" ? "#contact" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
                 {item}
               </a>
             );
@@ -1504,8 +1505,8 @@ export default function Home() {
               })}
             </div>
             <a
-              href="/Serviquent_Company_Portfolio.pptx"
-              download="Serviquent_Prime_Solutions_Portfolio.pptx"
+              href="/Serviquent Breif Company prfoile.pdf"
+              download="Serviquent_Prime_Solutions_Company_Profile.pdf"
               style={{ display: "inline-flex", alignItems: "center", gap: 12, background: "#0055e9", color: "#fff", padding: isMobile ? "14px 28px" : "16px 36px", borderRadius: 12, fontSize: isMobile ? 15 : 16, fontWeight: 700, textDecoration: "none", fontFamily: "'Outfit', sans-serif", boxShadow: "0 8px 32px rgba(0,85,233,0.3)", transition: "all 0.2s" }}
               onMouseEnter={function(e) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 40px rgba(0,85,233,0.45)"; }}
               onMouseLeave={function(e) { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,85,233,0.3)"; }}
@@ -1513,7 +1514,7 @@ export default function Home() {
               <span style={{ fontSize: 20 }}>⬇️</span>
               Download Company Portfolio
             </a>
-            <div style={{ marginTop: 12, fontSize: 12, color: "#94a3b8" }}>PowerPoint format · 12 slides · Free download</div>
+            <div style={{ marginTop: 12, fontSize: 12, color: "#94a3b8" }}>PDF format · Free download</div>
           </div>
 
           {/* Right - Preview Card */}
@@ -1547,8 +1548,8 @@ export default function Home() {
                   })}
                 </div>
                 <a
-                  href="/Serviquent_Company_Portfolio.pptx"
-                  download="Serviquent_Prime_Solutions_Portfolio.pptx"
+                  href="/Serviquent Breif Company prfoile.pdf"
+                  download="Serviquent_Prime_Solutions_Company_Profile.pdf"
                   style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "#38d9ff", color: "#010c22", padding: "14px 0", borderRadius: 10, fontSize: 15, fontWeight: 700, textDecoration: "none", fontFamily: "'Outfit', sans-serif", transition: "all 0.2s" }}
                   onMouseEnter={function(e) { e.currentTarget.style.background = "#60e5ff"; }}
                   onMouseLeave={function(e) { e.currentTarget.style.background = "#38d9ff"; }}
@@ -1670,7 +1671,7 @@ export default function Home() {
           </div>
           {[
             { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }]) },
-            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }] },
+            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "Company Portfolio", h: "/portfolio" }] },
             { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
