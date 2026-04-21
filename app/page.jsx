@@ -208,6 +208,34 @@ html, body { overflow-x: hidden; max-width: 100vw; }
   .about-grid { grid-template-columns: 1fr !important; }
 }
 
+/* ── PREMIUM EFFECTS ────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+.float-anim { animation: float 4.5s ease-in-out infinite; }
+@keyframes shimmer { 0% { background-position: -400% center; } 100% { background-position: 400% center; } }
+.shimmer-card { position: relative; overflow: hidden; }
+.shimmer-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent); transform: skewX(-15deg); transition: left 0.6s ease; pointer-events: none; }
+.shimmer-card:hover::before { left: 150%; }
+.svc-card { transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease !important; }
+.svc-card:hover { transform: translateY(-10px) scale(1.015) !important; box-shadow: 0 32px 72px rgba(0,85,233,0.16) !important; }
+.nav-a::after, .nav-a-dark::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #0055e9; transition: width 0.3s ease; }
+.nav-a:hover::after, .nav-a-dark:hover::after { width: 100%; }
+.nav-a, .nav-a-dark { position: relative; }
+@keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
 `;
 
 /* ─── TELECOM CANVAS OVERLAY ─────────────────────────────── */
@@ -636,6 +664,64 @@ export default function Home() {
     return function() { window.removeEventListener("resize", checkMobile); };
   }, []);
 
+  // ── Scroll Reveal Observer ──
+  useEffect(function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+
+    var els = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale");
+    els.forEach(function(el) { observer.observe(el); });
+    return function() { observer.disconnect(); };
+  }, []);
+
+  // ── Cursor Glow ──
+  useEffect(function() {
+    if (isMobile) return;
+    var glow = document.getElementById("cursor-glow");
+    if (!glow) return;
+    function moveCursor(e) {
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
+    }
+    window.addEventListener("mousemove", moveCursor);
+    return function() { window.removeEventListener("mousemove", moveCursor); };
+  }, [isMobile]);
+
+  // ── Card Tilt Effect ──
+  useEffect(function() {
+    if (isMobile) return;
+    var cards = document.querySelectorAll(".tilt-card");
+    function handleMove(e) {
+      var card = e.currentTarget;
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var cx = rect.width / 2;
+      var cy = rect.height / 2;
+      var rotX = (y - cy) / cy * -8;
+      var rotY = (x - cx) / cx * 8;
+      card.style.transform = "perspective(800px) rotateX(" + rotX + "deg) rotateY(" + rotY + "deg) translateZ(8px)";
+    }
+    function handleLeave(e) {
+      e.currentTarget.style.transform = "perspective(800px) rotateX(0) rotateY(0) translateZ(0)";
+    }
+    cards.forEach(function(card) {
+      card.addEventListener("mousemove", handleMove);
+      card.addEventListener("mouseleave", handleLeave);
+    });
+    return function() {
+      cards.forEach(function(card) {
+        card.removeEventListener("mousemove", handleMove);
+        card.removeEventListener("mouseleave", handleLeave);
+      });
+    };
+  }, [isMobile]);
+
   const techRef = useRef(null);
   const fttxRef = useRef(null);
 
@@ -848,6 +934,8 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif", overflowX: "hidden", maxWidth: "100vw" }}>
+      {/* Cursor Glow */}
+      {!isMobile && <div id="cursor-glow" style={{ pointerEvents: "none", position: "fixed", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,85,233,0.05) 0%, transparent 70%)", transform: "translate(-50%, -50%)", zIndex: 0, transition: "left 0.15s ease, top 0.15s ease" }} />}
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <script
         type="application/ld+json"
@@ -1029,7 +1117,7 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
           {SERVICES.map(function(s) {
             return (
-              <div key={s.num} className="svc-card">
+              <div key={s.num} className="svc-card tilt-card shimmer-card">
                 <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} className="svc-img" />
@@ -1117,7 +1205,7 @@ export default function Home() {
       </section>
 
       {/* ══ LIFECYCLE ════════════════════════════════════════ */}
-      <section id="engineering" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
+      <section id="engineering" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
         <div style={Object.assign({}, SL, { color: "#0055e9" })}>Our Process</div>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 14 }}>Fiber Network Engineering Lifecycle</h2>
         <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.75, maxWidth: 520, marginBottom: 72 }}>Every Serviquent engagement follows a proven, structured engineering lifecycle — ensuring that every deliverable is accurate, compliant, and construction-ready at each stage from initial concept through final network turn-up.</p>
@@ -1136,7 +1224,7 @@ export default function Home() {
       </section>
 
       {/* ══ GIS ══════════════════════════════════════════════ */}
-      <section id="gis" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
+      <section id="gis" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
           <div style={{ position: "relative", borderRadius: 20, overflow: "hidden", boxShadow: "0 24px 72px rgba(12,30,74,0.13)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -1177,7 +1265,7 @@ export default function Home() {
       </section>
 
       {/* ══ TECHNOLOGY ═══════════════════════════════════════ */}
-      <section id="technology" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#010c22" }} ref={techRef}>
+      <section id="technology" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#010c22" }} ref={techRef}>
         <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Our Stack</div>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5, marginBottom: 14 }}>Engineering Technology Ecosystem</h2>
         <p style={{ color: "rgba(255,255,255,0.48)", fontSize: 15, lineHeight: 1.75, maxWidth: 500, marginBottom: 60 }}>Serviquent engineers are certified and proficient across the full suite of industry-leading telecom engineering, GIS, and structural analysis platforms — ensuring every deliverable meets the highest standards of accuracy, interoperability, and regulatory compliance.</p>
@@ -1254,7 +1342,7 @@ export default function Home() {
       </section>
 
       {/* ══ PROJECTS ═════════════════════════════════════════ */}
-      <section id="projects" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
+      <section id="projects" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
         <div style={Object.assign({}, SL, { color: "#0055e9" })}>Our Work</div>
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3.2vw, 46px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 52 }}>Telecom Infrastructure Projects</h2>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
@@ -1264,7 +1352,7 @@ export default function Home() {
             { title: "Next-Generation FTTx Network Design", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700", text: "End-to-end FTTx network engineering for ISPs and competitive broadband operators — encompassing FTTH/FTTB passive optical network design, OLT port assignment, optical link budget analysis, and construction-ready drawing packages that deliver future-proof connectivity at scale." },
           ].map(function(p) {
             return (
-              <div key={p.title} className="proj-card">
+              <div key={p.title} className="proj-card shimmer-card tilt-card">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.img} alt={"Serviquent Project: " + p.title + " - Telecom Infrastructure"} style={{ width: "100%", height: 210, objectFit: "cover", display: "block" }} />
                 <div style={{ padding: "24px 26px 28px" }}>
@@ -1278,7 +1366,7 @@ export default function Home() {
       </section>
 
       {/* ══ ABOUT ════════════════════════════════════════════ */}
-      <section id="about" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
+      <section id="about" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: isMobile ? 280 : 420, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", borderRadius: 24, overflow: "hidden", padding: 0 }}>
             <video
