@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function Vendors() {
+export default function vendors() {
   const [isMobile, setIsMobile] = useState(false);
   const [form, setForm] = useState({ company: "", contact: "", email: "", phone: "", discipline: "", states: "", team: "", certs: "", experience: "" });
   const [sent, setSent] = useState(false);
