@@ -1,11 +1,5 @@
 "use client";
 
-export const metadata = {
-  title: "Vendor Partnerships | Serviquent Prime Solutions",
-  description: "Partner with Serviquent Prime Solutions as a subcontractor. We work with OSP engineers, GIS specialists, pole loading analysts, and permitting firms across the USA.",
-  alternates: { canonical: "https://www.serviquent.com/vendors" },
-};
-
 
 import { useState, useEffect } from "react";
 
