@@ -1,11 +1,5 @@
 "use client";
 
-export const metadata = {
-  title: "Careers | Serviquent Prime Solutions",
-  description: "Join Serviquent Prime Solutions — we are hiring telecom engineers, GIS specialists, OSP designers, and project managers across the United States.",
-  alternates: { canonical: "https://www.serviquent.com/careers" },
-};
-
 
 import { useState, useEffect } from "react";
 
