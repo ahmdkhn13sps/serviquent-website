@@ -1,5 +1,12 @@
 "use client";
 
+export const metadata = {
+  title: "Company Portfolio | Serviquent Prime Solutions",
+  description: "Download the Serviquent Prime Solutions company portfolio — telecom infrastructure engineering capabilities, FTTx, OSP, GIS, and more.",
+  alternates: { canonical: "https://www.serviquent.com/portfolio" },
+};
+
+
 import { useState, useEffect } from "react";
 
 export default function Portfolio() {
