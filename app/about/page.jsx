@@ -59,7 +59,7 @@ export default function AboutPage() {
             <a href="/" style={{ color: "#60748b", fontSize: 14, fontWeight: 500, textDecoration: "none" }}>← Back to Home</a>
             <a href="/portfolio" style={{ color: "#60748b", fontSize: 14, fontWeight: 500, textDecoration: "none" }}>Portfolio</a>
             <a href="/careers" style={{ color: "#60748b", fontSize: 14, fontWeight: 500, textDecoration: "none" }}>Careers</a>
-            <a href="/#contact" style={{ background: "#0055e9", color: "#fff", padding: "10px 22px", borderRadius: 9, fontSize: 14, fontWeight: 600, textDecoration: "none" }}>Get a Quote</a>
+            <a href="/?quote=true" style={{ background: "#0055e9", color: "#fff", padding: "10px 22px", borderRadius: 9, fontSize: 14, fontWeight: 600, textDecoration: "none" }}>Get a Quote</a>
           </div>
         </nav>
 
@@ -164,7 +164,7 @@ export default function AboutPage() {
               <a href="mailto:info@serviquent.com" style={{ background: "#fff", color: "#0055e9", padding: "14px 32px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
                 📧 info@serviquent.com
               </a>
-              <a href="/#contact" style={{ background: "rgba(255,255,255,0.1)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.3)", padding: "14px 32px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
+              <a href="/?quote=true" style={{ background: "rgba(255,255,255,0.1)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.3)", padding: "14px 32px", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
                 Get a Quote →
               </a>
             </div>

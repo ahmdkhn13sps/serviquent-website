@@ -655,6 +655,10 @@ export default function Home() {
   const [mobileMenu,  setMobileMenu]  = useState(false);
   const [quoteOpen,   setQuoteOpen]   = useState(false);
   const [quoteModal,  setQuoteModal]  = useState(false);
+useEffect(function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get("quote") === "true") { setQuoteModal(true); }
+  }, []);
   const [isMobile,    setIsMobile]    = useState(false);
 
   useEffect(function() {
