@@ -880,6 +880,96 @@ export default function Home() {
       {!isMobile && <div id="cursor-glow" style={{ pointerEvents: "none", position: "fixed", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,85,233,0.05) 0%, transparent 70%)", transform: "translate(-50%, -50%)", zIndex: 0, transition: "left 0.15s ease, top 0.15s ease" }} />}
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
+      {/* ══ NAVBAR ═══════════════════════════════════════════ */}
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 500, height: 72,
+        display: "flex", alignItems: "center", justifyContent: "space-between", padding: isMobile ? "0 20px" : "0 56px",
+        background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
+        boxShadow: scrolled ? "0 1px 28px rgba(12,30,74,0.09)" : "none",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        transition: "all 0.4s ease",
+      }}>
+        <a href="/" onClick={function(e) { e.preventDefault(); goTop(); }} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", cursor: "pointer" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/favicon.ico" alt="logo" style={{ height: 42, width: 42, borderRadius: 8 }} onError={function(e) { e.target.style.display = "none"; }} />
+          <div>
+            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: 20, letterSpacing: 0.5, color: scrolled ? "#0c1e4a" : "#fff", lineHeight: 1 }}>SERVIQUENT</div>
+            <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: scrolled ? "#0055e9" : "#38d9ff", fontWeight: 600 }}>Prime Solutions</div>
+          </div>
+        </a>
+        <div style={{ display: isMobile ? "none" : "flex", gap: 34 }}>
+          {["services", "wireless", "engineering", "fttx", "technology", "projects"].map(function(id) {
+            var label = id === "fttx" ? "FTTx" : id === "wireless" ? "Wireless" : id.charAt(0).toUpperCase() + id.slice(1);
+            return (
+              <a key={id} href={"#" + id} className={scrolled ? "nav-a-dark" : "nav-a"}
+                onClick={function(e) { e.preventDefault(); go(id); }}>
+                {label}
+              </a>
+            );
+          })}
+          <a href="/about" className={scrolled ? "nav-a-dark" : "nav-a"}>About</a>
+          <a href="/contact" className={scrolled ? "nav-a-dark" : "nav-a"}>Contact</a>
+          <a href="/careers" className={scrolled ? "nav-a-dark" : "nav-a"}>Careers</a>
+          <a href="/portfolio" className={scrolled ? "nav-a-dark" : "nav-a"}>Portfolio</a>
+          <a href="/vendors" className={scrolled ? "nav-a-dark" : "nav-a"}>Vendors</a>
+        </div>
+        <button
+          onClick={goQuote}
+          style={{ display: isMobile ? "none" : "block", background: "#0055e9", color: "#fff", border: "none", padding: "11px 26px", borderRadius: 9, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", boxShadow: "0 4px 18px rgba(0,85,233,0.32)", transition: "all 0.2s" }}>
+          Get a Quote
+        </button>
+        <button
+          onClick={function() { setMobileMenu(!mobileMenu); }}
+          style={{ display: isMobile ? "flex" : "none", flexDirection: "column", gap: 5, background: "none", border: "none", cursor: "pointer", padding: 8 }}>
+          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
+          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
+          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
+        </button>
+      </nav>
+
+      {mobileMenu && (
+        <div style={{ position: "fixed", top: 72, left: 0, right: 0, background: "#fff", zIndex: 499, padding: "20px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", flexDirection: "column", gap: 4 }}>
+          {["Services","Wireless","Engineering","FTTx","Technology","Projects","About","Contact","Careers","Portfolio","Vendors"].map(function(item) {
+            return (
+              <a key={item} href={item === "Careers" ? "/careers" : item === "Portfolio" ? "/portfolio" : item === "Vendors" ? "/vendors" : item === "Contact" ? "/contact" : item === "About" ? "/about" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
+                {item}
+              </a>
+            );
+          })}
+          <a href="#contact" onClick={function() { setMobileMenu(false); }} style={{ marginTop: 12, background: "#0055e9", color: "#fff", padding: "13px 0", borderRadius: 9, fontSize: 15, fontWeight: 600, textDecoration: "none", textAlign: "center", fontFamily: "'Outfit', sans-serif" }}>
+            Get a Quote
+          </a>
+        </div>
+      )}
+
+      {/* ══ HERO ═════════════════════════════════════════════ */}
+      <section style={{ position: "relative", height: "100vh", minHeight: isMobile ? 600 : 700, display: "flex", alignItems: "center", overflow: "hidden", background: "#010c22" }}>
+        {!isMobile && videoOk && (
+          <video autoPlay muted loop playsInline preload="auto" onError={function() { setVideoOk(false); }} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1, pointerEvents: "none" }}>
+            <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.mp4" type="video/mp4" />
+          </video>
+        )}
+        {isMobile && (
+          <div style={{ position: "absolute", inset: 0, zIndex: 1, backgroundImage: "url(https://res.cloudinary.com/dhtwtfbul/video/upload/so_0,w_1200/v1773114165/hero_uvqdpd.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
+        )}
+        <div style={{ position: "absolute", inset: 0, zIndex: 2, background: videoOk ? "linear-gradient(115deg, rgba(1,12,34,0.83) 0%, rgba(1,12,34,0.55) 60%, rgba(0,50,180,0.22) 100%)" : "linear-gradient(135deg, #010c22 0%, #031430 50%, #061c50 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none", backgroundImage: "linear-gradient(rgba(56,217,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(56,217,255,0.03) 1px, transparent 1px)", backgroundSize: "72px 72px" }} />
+        {!isMobile && <TelecomOverlay />}
+        <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: isMobile ? "100%" : 1100, width: "100%", paddingTop: isMobile ? 100 : 0 }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 16px", fontSize: isMobile ? 9 : 11, color: "#38d9ff", letterSpacing: isMobile ? 1 : 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both", flexWrap: "wrap", maxWidth: "100%" }}>
+            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
+            Telecom Infrastructure Engineering · FTTx · OSP · GIS · Pole Loading · Permitting
+          </div>
+          <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(46px, 6.2vw, 84px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: -1, color: "#fff", animation: "heroUp 0.8s 0.12s ease both", animationFillMode: "both" }}>
+            Engineering the<br />
+            <span style={{ color: "#38d9ff", textShadow: "0 0 80px rgba(56,217,255,0.5)" }}>Infrastructure</span><br />
+            Powering Modern<br />
+            Fiber Networks
+          </h1>
+          <p style={{ marginTop: 28, fontSize: isMobile ? 14 : 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 580, fontWeight: 400, animation: "heroUp 0.8s 0.26s ease both", animationFillMode: "both" }}>
+            Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development — serving operators, ISPs, and utilities across the United States.
+          </p>
           <div style={{ display: "flex", gap: 10, marginTop: 28, flexWrap: "wrap", animation: "heroUp 0.8s 0.34s ease both", animationFillMode: "both" }}>
             {["FTTH", "FTTB", "FTTC", "FTTN", "HFC", "OSP", "5G", "GIS"].map(function(tag) {
               return <span key={tag} className="hero-tag">{tag}</span>;
