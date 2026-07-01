@@ -86,7 +86,7 @@ export default function ContactPage() {
             <div>
               <div style={{ fontSize: 11, letterSpacing: 3, textTransform: "uppercase", fontWeight: 700, color: "#0055e9", marginBottom: 14 }}>Contact Information</div>
               <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 800, color: "#0c1e4a", marginBottom: 24, letterSpacing: -0.5 }}>Let&apos;s Start a Conversation</h2>
-              <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 36 }}>Our engineering team is available Monday through Friday, 9AM–6PM EST. We typically respond to all inquiries within one business day.</p>
+              <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 36 }}>Our engineering team is ready to assist with your telecom infrastructure project. We respond to all inquiries as quickly as possible.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 40 }}>
                 {[
                   { icon: "📧", label: "General Inquiries", val: "info@serviquent.com", href: "mailto:info@serviquent.com" },
@@ -109,19 +109,16 @@ export default function ContactPage() {
                 })}
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                {[
-                  { flag: "🇺🇸", country: "USA Office", city: "Cheyenne, Wyoming", detail: "United States" },
-                  { flag: "🇮🇳", country: "India Office", city: "Gurugram, Haryana", detail: "India" },
-                ].map(function(o) {
-                  return (
-                    <div key={o.country} style={{ background: "#f4f8ff", borderRadius: 14, padding: "20px", border: "1px solid #e4ecf8" }}>
-                      <div style={{ fontSize: 28, marginBottom: 8 }}>{o.flag}</div>
-                      <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 16, fontWeight: 700, color: "#0c1e4a", marginBottom: 4 }}>{o.country}</div>
-                      <div style={{ fontSize: 13, color: "#60748b" }}>{o.city}</div>
-                      <div style={{ fontSize: 13, color: "#60748b" }}>{o.detail}</div>
-                    </div>
-                  );
-                })}
+                <div style={{ background: "#f4f8ff", borderRadius: 14, padding: "20px", border: "1px solid #e4ecf8" }}>
+                  <img src="https://flagcdn.com/w80/us.png" alt="USA Flag" style={{ width: 56, height: 36, objectFit: "cover", borderRadius: 4, marginBottom: 10, display: "block", border: "1px solid #e4ecf8" }} />
+                  <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 18, fontWeight: 700, color: "#0c1e4a", marginBottom: 4 }}>USA Office</div>
+                  <div style={{ fontSize: 14, color: "#60748b", lineHeight: 1.7 }}>Cheyenne, Wyoming<br />United States</div>
+                </div>
+                <div style={{ background: "#f4f8ff", borderRadius: 14, padding: "20px", border: "1px solid #e4ecf8" }}>
+                  <img src="https://flagcdn.com/w80/in.png" alt="India Flag" style={{ width: 56, height: 36, objectFit: "cover", borderRadius: 4, marginBottom: 10, display: "block", border: "1px solid #e4ecf8" }} />
+                  <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 18, fontWeight: 700, color: "#0c1e4a", marginBottom: 4 }}>India Office</div>
+                  <div style={{ fontSize: 14, color: "#60748b", lineHeight: 1.7 }}>Gurugram, Haryana<br />India</div>
+                </div>
               </div>
             </div>
             {/* RIGHT - Form */}
