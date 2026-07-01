@@ -75,7 +75,7 @@ const SERVICES = [
   },
   {
     num: "08", title: "Utility Coordination",
-    img: "https://www.kci.com/wp-content/uploads/2023/01/Utility-Coordination-Hero.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ59mIrMhYjDEpCUY3qUmM1Bxo1zDfvALMv3sMr7Mzcg&s=10",
     short: "End-to-end utility coordination services including joint-use agreements, one-call notifications, conflict identification, underground utility locating, and multi-utility owner engagement to clear the path for telecom construction.",
     full: "Serviquent's Utility Coordination practice manages the critical coordination process between telecom operators and utility owners — ensuring that all existing infrastructure conflicts are identified, documented, and resolved before construction begins. Our team processes one-call (811) notifications, coordinates with electric, gas, water, sewer, and existing telecom utility owners to obtain facility records and conduct joint field reviews. We identify underground and aerial conflicts, prepare conflict summary reports, and manage the resolution process through design modifications or utility relocation coordination. For joint-use pole environments, we prepare and submit joint-use applications, negotiate attachment agreements, and track approval workflows with investor-owned utilities (IOUs), electric cooperatives, and municipal utility owners. Our utility coordination deliverables include conflict matrices, facility maps, joint-use application packages, and pre-construction clearance documentation that protect both project timelines and contractor safety.",
   },
@@ -84,42 +84,6 @@ const SERVICES = [
     img: "https://sudarshancadd.com/wp-content/uploads/2026/02/FTTH-design-sevices-3.webp",
     short: "High-Level Design (HLD) and Low-Level Design (LLD) documentation for telecom network deployments — from conceptual architecture through detailed implementation-ready engineering specifications.",
     full: "Serviquent delivers both High-Level Design (HLD) and Low-Level Design (LLD) documentation packages that together form a complete engineering blueprint for telecom network deployments. Our HLD documents establish the overall network architecture — defining topology, technology selection, capacity planning, node placement strategy, routing hierarchy, and system interfaces at a conceptual level suitable for stakeholder review, business case approval, and project authorization. Our LLD documents translate the approved HLD into detailed, implementation-ready specifications — covering equipment configurations, interface parameters, IP addressing schemes, fiber routing plans, splice schedules, equipment room layouts, power and grounding designs, and complete bill of materials. Together, HLD and LLD packages provide a seamless engineering handoff from concept through construction — ensuring that design intent is preserved at every stage of project execution and that field crews have unambiguous, complete instructions for every element of the deployment.",
-  },
-  {
-    num: "W1", title: "RF Network Engineering",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    short: "End-to-end RF network design including frequency planning, coverage analysis, interference mitigation, and propagation modeling for cellular and broadband wireless networks.",
-    full: "Serviquent's RF Network Engineering practice delivers comprehensive radio frequency design solutions for cellular, fixed wireless, and broadband network deployments. Our RF engineers perform detailed propagation modeling using industry-standard tools, conduct frequency planning and channel assignment to minimize co-channel and adjacent-channel interference, and develop coverage prediction maps that accurately represent real-world network performance. We design RF link budgets, calculate EIRP and path loss margins, and optimize antenna configurations for maximum coverage efficiency. Our team supports LTE, 5G NR, CBRS, WISP, and licensed fixed wireless deployments — delivering RF designs that translate directly into deployment-ready network configurations with predictable performance outcomes.",
-  },
-  {
-    num: "W2", title: "Wireless Site Design",
-    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
-    short: "Complete wireless site design including antenna placement, equipment layout, grounding systems, power systems, and tower mount configurations for macro, small cell, and DAS installations.",
-    full: "Our Wireless Site Design team provides full-scope engineering for greenfield tower sites, rooftop installations, small cell deployments, and Distributed Antenna Systems (DAS). We produce complete site design packages including antenna placement diagrams, equipment shelter layouts, cable routing plans, grounding and bonding designs per TIA-222 and NEC standards, backup power system sizing, and tower mount specifications. Our engineers coordinate directly with tower owners, landlords, and municipalities to ensure all structural, electrical, and zoning requirements are met. Every site design package is production-ready — structured to go directly to field installation crews without revision or rework.",
-  },
-  {
-    num: "W3", title: "Tower Structural Analysis",
-    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
-    short: "Structural analysis and modification engineering for wireless towers, monopoles, rooftops, and lattice structures to TIA-222 and ANSI standards.",
-    full: "Serviquent performs structural engineering assessments for wireless towers, monopoles, guyed towers, lattice structures, rooftop installations, and water tank mounts. Our structural engineers analyze existing structures for compliance with TIA-222-H and ANSI standards, assess loading capacity for proposed antenna and equipment additions, and produce stamped modification drawings when reinforcement is required. We perform wind load, ice load, and seismic analyses, evaluate foundation adequacy, and produce full structural reports that satisfy carrier requirements for lease amendments, permitting, and zoning approvals.",
-  },
-  {
-    num: "W4", title: "Small Cell & DAS Engineering",
-    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
-    short: "Small cell network design and Distributed Antenna System engineering for urban densification, in-building coverage, and public venue wireless deployments.",
-    full: "Our Small Cell and DAS Engineering practice supports urban network densification programs, in-building wireless coverage solutions, and public venue deployments for stadiums, airports, campuses, and transit systems. We design small cell node placement strategies using RF propagation analysis, produce pole attachment designs for street-level small cell installations, and engineer complete Passive and Active DAS architectures from donor antenna through remote units to coverage zones.",
-  },
-  {
-    num: "W5", title: "5G & CBRS Network Planning",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-    short: "5G NR and CBRS network planning services including spectrum coordination, coverage design, capacity planning, and deployment strategy for private and public wireless networks.",
-    full: "Serviquent provides specialized 5G NR and CBRS network planning services for enterprise private networks, public carrier deployments, and industrial wireless applications. Our engineers develop 5G coverage and capacity plans, perform spectrum coordination for CBRS deployments through the Spectrum Access System (SAS), and design both Sub-6GHz and mmWave network architectures. We produce detailed deployment strategies covering gNB placement, fronthaul and midhaul fiber routing, core network connectivity, and phased rollout sequencing.",
-  },
-  {
-    num: "W6", title: "Wireless Permitting & Zoning",
-    img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
-    short: "End-to-end wireless facility permitting including zoning applications, NEPA environmental reviews, FAA obstruction analysis, historic preservation filings, and municipal approvals.",
-    full: "Our Wireless Permitting and Zoning practice manages the complete regulatory approval process for wireless facility deployments. We prepare and submit zoning applications, special use permit requests, variance applications, and administrative approvals for new tower construction and co-location additions. Our team coordinates NEPA environmental reviews, Section 106 historic preservation consultations, FAA Form 7460 obstruction analyses, and FCC antenna structure registration filings. We manage local municipal processes, prepare RF emissions compliance documentation per FCC OET Bulletin 65, and coordinate with state historic preservation offices and tribal consultation requirements.",
   },
 ];
 
@@ -158,7 +122,7 @@ const WIRELESS_SERVICES = [
     num: "W6", title: "Wireless Permitting & Zoning",
     img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
     short: "End-to-end wireless facility permitting including zoning applications, NEPA environmental reviews, FAA obstruction analysis, historic preservation filings, and municipal approvals.",
-    full: "Our Wireless Permitting and Zoning practice manages the complete regulatory approval process for wireless facility deployments. We prepare and submit zoning applications, special use permit requests, variance applications, and administrative approvals for new tower construction and co-location additions. Our team coordinates NEPA environmental reviews, Section 106 historic preservation consultations, FAA Form 7460 obstruction analyses, and FCC antenna structure registration filings. We manage local municipal processes, prepare RF emissions compliance documentation per FCC OET Bulletin 65, and coordinate with state historic preservation offices (SHPO) and tribal consultation requirements. Our deep regulatory knowledge ensures wireless facilities are approved efficiently and in full compliance with all federal, state, and local requirements.",
+    full: "Our Wireless Permitting and Zoning practice manages the complete regulatory approval process for wireless facility deployments. We prepare and submit zoning applications, special use permit requests, variance applications, and administrative approvals for new tower construction and co-location additions. Our team coordinates NEPA environmental reviews, Section 106 historic preservation consultations, FAA Form 7460 obstruction analyses, and FCC antenna structure registration filings. We manage local municipal processes, prepare RF emissions compliance documentation per FCC OET Bulletin 65, and coordinate with state historic preservation offices and tribal consultation requirements.",
   },
 ];
 
@@ -953,8 +917,8 @@ export default function Home() {
           </div>
         </a>
         <div style={{ display: isMobile ? "none" : "flex", gap: 34 }}>
-          {["services", "wireless", "engineering", "fttx", "technology", "projects"].map(function(id) {
-            var label = id === "fttx" ? "FTTx" : id === "wireless" ? "Wireless" : id.charAt(0).toUpperCase() + id.slice(1);
+          {["services", "engineering", "fttx", "technology", "projects"].map(function(id) {
+            var label = id === "fttx" ? "FTTx" : id.charAt(0).toUpperCase() + id.slice(1);
             return (
               <a key={id} href={"#" + id} className={scrolled ? "nav-a-dark" : "nav-a"}
                 onClick={function(e) { e.preventDefault(); go(id); }}>
@@ -984,7 +948,7 @@ export default function Home() {
 
       {mobileMenu && (
         <div style={{ position: "fixed", top: 72, left: 0, right: 0, background: "#fff", zIndex: 499, padding: "20px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", flexDirection: "column", gap: 4 }}>
-          {["Services","Wireless","Engineering","FTTx","Technology","Projects","About","Contact","Careers","Portfolio","Vendors"].map(function(item) {
+          {["Services","Engineering","FTTx","Technology","Projects","About","Contact","Careers","Portfolio","Vendors"].map(function(item) {
             return (
               <a key={item} href={item === "Careers" ? "/careers" : item === "Portfolio" ? "/portfolio" : item === "Vendors" ? "/vendors" : item === "Contact" ? "/contact" : item === "About" ? "/about" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
                 {item}
@@ -1097,6 +1061,19 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* ══ WIRELESS SERVICES ════════════════════════════════ */}
+      <section id="wireless" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#010c22" }}>
+        <div style={{ maxWidth: 800 }}>
+          <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Wireless Engineering</div>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(30px, 3.8vw, 50px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5, marginBottom: 24 }}>
+            Wireless Engineering Services
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 17, lineHeight: 1.9, maxWidth: 720 }}>
+            From RF network design and 5G planning to tower structural analysis, small cell engineering, and wireless permitting — our wireless engineering practice delivers carrier-grade solutions for every deployment type.
+          </p>
         </div>
       </section>
 
