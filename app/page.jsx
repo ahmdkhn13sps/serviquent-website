@@ -67,6 +67,24 @@ const SERVICES = [
     short: "Scalable ISP network architecture design including access, distribution, and core layer planning for fiber, HFC (Hybrid Fiber-Coaxial) from headend through fiber node to subscriber tap, and fixed wireless operators.",
     full: "Serviquent architects complete ISP network designs tailored to the operational scale and technology platform of each client. Whether building a greenfield FTTH network, upgrading an HFC (Hybrid Fiber-Coaxial) system to DOCSIS 3.1, or deploying a hybrid fiber-wireless access platform, our engineers develop detailed network architecture documents, logical topology diagrams, equipment specifications, and capacity planning models. We design at every layer — from the customer premise equipment (CPE) and distribution point unit (DPU) through the optical line terminal (OLT), aggregation router, and internet exchange point (IXP) interconnect. For HFC (Hybrid Fiber-Coaxial) networks, our engineers design the fiber backbone from the headend through fiber nodes, and the coaxial distribution plant from node to subscriber tap — balancing signal levels, optimizing amplifier cascades, and planning node-splits to support DOCSIS 3.1/4.0 capacity growth. Every design incorporates built-in redundancy, scalable headroom for future subscriber growth, and adherence to MEF, IEEE, and ITU-T standards governing broadband network architecture.",
   },
+  {
+    num: "07", title: "Field Survey & Data Collection",
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    short: "On-the-ground field survey and data collection services including structure attribute capture, existing infrastructure documentation, aerial and underground route surveys, and GPS-accurate asset inventory for telecom network deployments.",
+    full: "Serviquent's Field Survey and Data Collection practice provides the verified ground-truth data that drives accurate network design and eliminates costly field surprises during construction. Our field teams conduct comprehensive structure attribute surveys capturing pole height, class, species, existing attachments, and condition assessments. We perform aerial and underground route surveys documenting existing infrastructure, clearance measurements, span lengths, anchor configurations, and underground conduit pathfinding. Using GPS-enabled data collection platforms including Katapult Pro and Collector for ArcGIS, our teams capture geotagged photos, measured field attributes, and real-time asset inventory that feeds directly into design platforms — ensuring that OSP engineering deliverables reflect actual field conditions. We also support make-ready data collection, joint-use attachment audits, and post-construction as-built field verification programs.",
+  },
+  {
+    num: "08", title: "Utility Coordination",
+    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
+    short: "End-to-end utility coordination services including joint-use agreements, one-call notifications, conflict identification, underground utility locating, and multi-utility owner engagement to clear the path for telecom construction.",
+    full: "Serviquent's Utility Coordination practice manages the critical coordination process between telecom operators and utility owners — ensuring that all existing infrastructure conflicts are identified, documented, and resolved before construction begins. Our team processes one-call (811) notifications, coordinates with electric, gas, water, sewer, and existing telecom utility owners to obtain facility records and conduct joint field reviews. We identify underground and aerial conflicts, prepare conflict summary reports, and manage the resolution process through design modifications or utility relocation coordination. For joint-use pole environments, we prepare and submit joint-use applications, negotiate attachment agreements, and track approval workflows with investor-owned utilities (IOUs), electric cooperatives, and municipal utility owners. Our utility coordination deliverables include conflict matrices, facility maps, joint-use application packages, and pre-construction clearance documentation that protect both project timelines and contractor safety.",
+  },
+  {
+    num: "09", title: "HLD & LLD Network Design",
+    img: "https://images.unsplash.com/photo-1607706189992-eae578626c86?w=800&q=80",
+    short: "High-Level Design (HLD) and Low-Level Design (LLD) documentation for telecom network deployments — from conceptual architecture through detailed implementation-ready engineering specifications.",
+    full: "Serviquent delivers both High-Level Design (HLD) and Low-Level Design (LLD) documentation packages that together form a complete engineering blueprint for telecom network deployments. Our HLD documents establish the overall network architecture — defining topology, technology selection, capacity planning, node placement strategy, routing hierarchy, and system interfaces at a conceptual level suitable for stakeholder review, business case approval, and project authorization. Our LLD documents translate the approved HLD into detailed, implementation-ready specifications — covering equipment configurations, interface parameters, IP addressing schemes, fiber routing plans, splice schedules, equipment room layouts, power and grounding designs, and complete bill of materials. Together, HLD and LLD packages provide a seamless engineering handoff from concept through construction — ensuring that design intent is preserved at every stage of project execution and that field crews have unambiguous, complete instructions for every element of the deployment.",
+  },
 ];
 
 const WIRELESS_SERVICES = [
@@ -1387,7 +1405,7 @@ export default function Home() {
               { icon: "📧", label: "Email",        val: "info@serviquent.com", href: "mailto:info@serviquent.com" },
               { icon: "📞", label: "Phone (USA)",  val: "(307) 317-3044", href: "tel:+13073173044" },
               { icon: "💼", label: "LinkedIn",     val: "Serviquent Prime Solutions", href: "https://www.linkedin.com/company/serviquent/" },
-              { icon: "📍", label: "USA Office",   val: "Cheyenne, Wyoming · United States" },
+              { icon: "🇺🇸", label: "USA Office",   val: "Cheyenne, Wyoming · United States" },
               { icon: "🇮🇳", label: "India Office", val: "Gurugram, Haryana · India" },
             ].map(function(d) {
               return (
@@ -1711,8 +1729,8 @@ export default function Home() {
             </p>
           </div>
           {[
-            { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }]) },
-            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "About Us", h: "/about" }, { l: "Company Portfolio", h: "/portfolio" }, { l: "Vendor Partnerships", h: "/vendors" }] },
+            { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }, { l: "RF Network Engineering", h: "#wireless" }, { l: "Wireless Site Design", h: "#wireless" }, { l: "5G & CBRS Planning", h: "#wireless" }]) },
+            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "/about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "About Us", h: "/about" }, { l: "Contact Us", h: "/contact" }, { l: "Company Portfolio", h: "/portfolio" }, { l: "Vendor Partnerships", h: "/vendors" }] },
             { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
@@ -1728,7 +1746,7 @@ export default function Home() {
           })}
         </div>
         <div style={{ paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <p style={{ fontSize: 13, color: "#344055" }}>© 2026 Serviquent Pvt Ltd. All Rights Reserved.</p>
+          <p style={{ fontSize: 13, color: "#344055" }}>© 2026 Serviquent Prime Solutions. All Rights Reserved.</p>
           <div style={{ display: "flex", gap: 10 }}>
             <>
               {/* LinkedIn */}
