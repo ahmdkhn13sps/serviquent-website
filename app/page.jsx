@@ -965,7 +965,7 @@ useEffect(function() {
         </a>
 
         <div style={{ display: isMobile ? "none" : "flex", gap: 34 }}>
-          {["services", "engineering", "fttx", "technology", "projects", "contact"].map(function(id) {
+          {["services", "engineering", "fttx", "technology", "projects"].map(function(id) {
             var label = id === "fttx" ? "FTTx" : id.charAt(0).toUpperCase() + id.slice(1);
             return (
               <a key={id} href={"#" + id} className={scrolled ? "nav-a-dark" : "nav-a"}
@@ -975,6 +975,7 @@ useEffect(function() {
             );
           })}
           <a href="/about" className={scrolled ? "nav-a-dark" : "nav-a"}>About</a>
+          <a href="/contact" className={scrolled ? "nav-a-dark" : "nav-a"}>Contact</a>
           <a href="/portfolio" className={scrolled ? "nav-a-dark" : "nav-a"}>Portfolio</a>
           <a href="/vendors" className={scrolled ? "nav-a-dark" : "nav-a"}>Vendors</a>
         </div>
@@ -998,7 +999,7 @@ useEffect(function() {
       {/* Mobile Menu Dropdown */}
       {mobileMenu && (
         <div style={{ position: "fixed", top: 72, left: 0, right: 0, background: "#fff", zIndex: 499, padding: "20px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", flexDirection: "column", gap: 4 }}>
-          {["Services","Engineering","FTTx","Technology","Projects","About","Careers","Portfolio","Vendors","Contact"].map(function(item) {
+          {["Services","Engineering","FTTx","Technology","Projects","About","Contact","Careers","Portfolio","Vendors"].map(function(item) {
             return (
               <a key={item} href={item === "Careers" ? "/careers" : item === "Portfolio" ? "/portfolio" : item === "Vendors" ? "/vendors" : item === "Contact" ? "#contact" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
                 {item}
@@ -1766,8 +1767,8 @@ useEffect(function() {
           </div>
           {[
             { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }]) },
-            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "Company Portfolio", h: "/portfolio" }, { l: "Vendor Partnerships", h: "/vendors" }] },
-            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
+            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "/about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "Company Portfolio", h: "/portfolio" }, { l: "Vendor Partnerships", h: "/vendors" }] },
+            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "/contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
               <div key={col.h}>
