@@ -34,8 +34,8 @@ const SERVICES = [
   {
     num: "01", title: "OSP Fiber Engineering",
     img: "https://vetrofibermap.com/wp-content/uploads/2021/06/Legacy-Data-1024x574.jpg",
-    short: "End-to-end outside plant fiber design including aerial, underground, and hybrid network configurations with GIS-integrated deliverables.",
-    full: "Serviquent delivers comprehensive Outside Plant (OSP) Fiber Engineering services across the full spectrum of network deployment — from initial route feasibility and path survey through final construction-ready package submission. Our engineers specialize in aerial strand mapping, underground conduit system design, splice point placement, and splice loss budgeting. We leverage industry-leading GIS platforms including ArcGIS and QGIS to produce precise geospatial datasets, CAD-quality construction drawings, and permit-ready documentation. Our team holds deep proficiency in AT&T's proprietary network design and field management platforms — including Aramis, used for network inventory and design workflow management, and Waldo, utilized for field data collection, asset validation, and construction coordination — enabling us to deliver fully integrated OSP packages that align seamlessly with Tier 1 carrier systems and internal approval workflows. Every deliverable is engineered to meet NESC, NEC, and utility-specific standards, enabling seamless handoff to construction crews and minimizing costly field change orders.",
+    short: "End-to-end outside plant fiber design including aerial, underground, and hybrid network configurations, complete with GIS-integrated deliverables and detailed Bill of Materials (BOM) for accurate procurement and field crew readiness.",
+    full: "Serviquent delivers comprehensive Outside Plant (OSP) Fiber Engineering services across the full spectrum of network deployment — from initial route feasibility and path survey through final construction-ready package submission. Our engineers specialize in aerial strand mapping, underground conduit system design, splice point placement, and splice loss budgeting. We leverage industry-leading GIS platforms including ArcGIS and QGIS to produce precise geospatial datasets, CAD-quality construction drawings, and permit-ready documentation. Our team holds deep proficiency in AT&T's proprietary network design and field management platforms — including Aramis, used for network inventory and design workflow management, and Waldo, utilized for field data collection, asset validation, and construction coordination — enabling us to deliver fully integrated OSP packages that align seamlessly with Tier 1 carrier systems and internal approval workflows. Every project package includes a detailed Bill of Materials (BOM) — a complete itemized list of cable, hardware, splice closures, conduit, and supporting materials required for construction — enabling accurate procurement, cost estimation, and field crew readiness before mobilization. Every deliverable is engineered to meet NESC, NEC, and utility-specific standards, enabling seamless handoff to construction crews and minimizing costly field change orders.",
   },
   {
     num: "02", title: "GIS Network Planning",
@@ -58,16 +58,56 @@ const SERVICES = [
   {
     num: "05", title: "Permitting & Regulatory Coordination",
     img: "https://www.mepbim.com/wp-content/uploads/2020/11/mep-shopdwg.jpg",
-    short: "End-to-end management of telecom construction permits, ROW applications, municipal approvals, and federal regulatory filings.",
-    full: "Navigating the regulatory landscape for telecom infrastructure deployment requires expertise across multiple jurisdictions — and Serviquent manages this process end-to-end. We prepare and submit construction permits, right-of-way (ROW) encroachment applications, traffic control plans, and franchise agreement filings on behalf of our clients. Our team coordinates directly with municipal engineering departments, state DOTs, railroad authorities, tribal lands offices, and utility owners to resolve objections and obtain approvals efficiently. We maintain detailed permit tracking logs, manage expiration schedules, and prepare as-built documentation packages required for permit closeout. Our regulatory knowledge spans FCC Part 1 pole attachment rules, PCIA standards, and state-specific PUC requirements.",
+    short: "End-to-end management of telecom construction permits, ROW applications, Traffic Control Plans (TCP) to MUTCD standards, multi-jurisdictional municipal approvals, and federal regulatory filings.",
+    full: "Navigating the regulatory landscape for telecom infrastructure deployment requires expertise across multiple jurisdictions — and Serviquent manages this process end-to-end. We prepare and submit construction permits, right-of-way (ROW) encroachment applications, and franchise agreement filings on behalf of our clients. A core part of our permitting package is the Traffic Control Plan (TCP) — detailed lane closure diagrams, signage layouts, and work zone safety plans prepared to MUTCD and state DOT standards, required for any construction activity within public roadways or rights-of-way. Our team coordinates directly with municipal engineering departments, state DOTs, railroad authorities, tribal lands offices, and utility owners to resolve objections and obtain approvals efficiently. We maintain detailed permit tracking logs, manage expiration schedules, and prepare as-built documentation packages required for permit closeout. Our regulatory knowledge spans FCC Part 1 pole attachment rules, PCIA standards, and state-specific PUC requirements.",
   },
   {
     num: "06", title: "ISP Network Design",
     img: "https://vetrofibermap.com/wp-content/uploads/2021/11/What-is-OSP-Blog-Post-Infographic.jpg",
-    short: "Scalable ISP network architecture design including access, distribution, and core layer planning for fiber, HFC, and fixed wireless operators.",
-    full: "Serviquent architects complete ISP network designs tailored to the operational scale and technology platform of each client. Whether building a greenfield FTTH network, upgrading an HFC system to DOCSIS 3.1, or deploying a hybrid fiber-wireless access platform, our engineers develop detailed network architecture documents, logical topology diagrams, equipment specifications, and capacity planning models. We design at every layer — from the customer premise equipment (CPE) and distribution point unit (DPU) through the optical line terminal (OLT), aggregation router, and internet exchange point (IXP) interconnect. Every design incorporates built-in redundancy, scalable headroom for future subscriber growth, and adherence to MEF, IEEE, and ITU-T standards governing broadband network architecture.",
+    short: "Scalable ISP network architecture design including access, distribution, and core layer planning for fiber, HFC (Hybrid Fiber-Coaxial) from headend through fiber node to subscriber tap, and fixed wireless operators.",
+    full: "Serviquent architects complete ISP network designs tailored to the operational scale and technology platform of each client. Whether building a greenfield FTTH network, upgrading an HFC (Hybrid Fiber-Coaxial) system to DOCSIS 3.1, or deploying a hybrid fiber-wireless access platform, our engineers develop detailed network architecture documents, logical topology diagrams, equipment specifications, and capacity planning models. We design at every layer — from the customer premise equipment (CPE) and distribution point unit (DPU) through the optical line terminal (OLT), aggregation router, and internet exchange point (IXP) interconnect. For HFC (Hybrid Fiber-Coaxial) networks, our engineers design the fiber backbone from the headend through fiber nodes, and the coaxial distribution plant from node to subscriber tap — balancing signal levels, optimizing amplifier cascades, and planning node-splits to support DOCSIS 3.1/4.0 capacity growth. Every design incorporates built-in redundancy, scalable headroom for future subscriber growth, and adherence to MEF, IEEE, and ITU-T standards governing broadband network architecture.",
   },
 ];
+
+const WIRELESS_SERVICES = [
+  {
+    num: "W1", title: "RF Network Engineering",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    short: "End-to-end RF network design including frequency planning, coverage analysis, interference mitigation, and propagation modeling for cellular and broadband wireless networks.",
+    full: "Serviquent's RF Network Engineering practice delivers comprehensive radio frequency design solutions for cellular, fixed wireless, and broadband network deployments. Our RF engineers perform detailed propagation modeling using industry-standard tools, conduct frequency planning and channel assignment to minimize co-channel and adjacent-channel interference, and develop coverage prediction maps that accurately represent real-world network performance. We design RF link budgets, calculate EIRP and path loss margins, and optimize antenna configurations for maximum coverage efficiency. Our team supports LTE, 5G NR, CBRS, WISP, and licensed fixed wireless deployments — delivering RF designs that translate directly into deployment-ready network configurations with predictable performance outcomes.",
+  },
+  {
+    num: "W2", title: "Wireless Site Design",
+    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
+    short: "Complete wireless site design including antenna placement, equipment layout, grounding systems, power systems, and tower mount configurations for macro, small cell, and DAS installations.",
+    full: "Our Wireless Site Design team provides full-scope engineering for greenfield tower sites, rooftop installations, small cell deployments, and Distributed Antenna Systems (DAS). We produce complete site design packages including antenna placement diagrams, equipment shelter layouts, cable routing plans, grounding and bonding designs per TIA-222 and NEC standards, backup power system sizing, and tower mount specifications. Our engineers coordinate directly with tower owners, landlords, and municipalities to ensure all structural, electrical, and zoning requirements are met. Every site design package is production-ready — structured to go directly to field installation crews without revision or rework.",
+  },
+  {
+    num: "W3", title: "Tower Structural Analysis",
+    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
+    short: "Structural analysis and modification engineering for wireless towers, monopoles, rooftops, and lattice structures to TIA-222 and ANSI standards.",
+    full: "Serviquent performs structural engineering assessments for wireless towers, monopoles, guyed towers, lattice structures, rooftop installations, and water tank mounts. Our structural engineers analyze existing structures for compliance with TIA-222-H and ANSI standards, assess loading capacity for proposed antenna and equipment additions, and produce stamped modification drawings when reinforcement is required. We perform wind load, ice load, and seismic analyses, evaluate foundation adequacy, and produce full structural reports that satisfy carrier requirements for lease amendments, permitting, and zoning approvals. Our work supports both co-location additions and new build-to-suit tower projects.",
+  },
+  {
+    num: "W4", title: "Small Cell & DAS Engineering",
+    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    short: "Small cell network design and Distributed Antenna System engineering for urban densification, in-building coverage, and public venue wireless deployments.",
+    full: "Our Small Cell and DAS Engineering practice supports urban network densification programs, in-building wireless coverage solutions, and public venue deployments for stadiums, airports, campuses, and transit systems. We design small cell node placement strategies using RF propagation analysis, produce pole attachment designs for street-level small cell installations, and engineer complete Passive and Active DAS architectures from donor antenna through remote units to coverage zones. Our engineers manage the full engineering lifecycle — from initial RF design and equipment selection through site-specific installation drawings, fiber backhaul routing, and commissioning support documentation.",
+  },
+  {
+    num: "W5", title: "5G & CBRS Network Planning",
+    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    short: "5G NR and CBRS network planning services including spectrum coordination, coverage design, capacity planning, and deployment strategy for private and public wireless networks.",
+    full: "Serviquent provides specialized 5G NR and CBRS network planning services for enterprise private networks, public carrier deployments, and industrial wireless applications. Our engineers develop 5G coverage and capacity plans, perform spectrum coordination for CBRS deployments through the Spectrum Access System (SAS), and design both Sub-6GHz and mmWave network architectures. We produce detailed deployment strategies covering gNB placement, fronthaul and midhaul fiber routing, core network connectivity, and phased rollout sequencing. Our CBRS expertise spans PAL and GAA tier deployments for manufacturing, warehousing, ports, campuses, and utilities seeking to deploy private LTE or 5G networks on licensed or shared spectrum.",
+  },
+  {
+    num: "W6", title: "Wireless Permitting & Zoning",
+    img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    short: "End-to-end wireless facility permitting including zoning applications, NEPA environmental reviews, FAA obstruction analysis, historic preservation filings, and municipal approvals.",
+    full: "Our Wireless Permitting and Zoning practice manages the complete regulatory approval process for wireless facility deployments. We prepare and submit zoning applications, special use permit requests, variance applications, and administrative approvals for new tower construction and co-location additions. Our team coordinates NEPA environmental reviews, Section 106 historic preservation consultations, FAA Form 7460 obstruction analyses, and FCC antenna structure registration filings. We manage local municipal processes, prepare RF emissions compliance documentation per FCC OET Bulletin 65, and coordinate with state historic preservation offices (SHPO) and tribal consultation requirements. Our deep regulatory knowledge ensures wireless facilities are approved efficiently and in full compliance with all federal, state, and local requirements.",
+  },
+];
+
 
 const FTTX_DATA = [
   {
@@ -655,10 +695,6 @@ export default function Home() {
   const [mobileMenu,  setMobileMenu]  = useState(false);
   const [quoteOpen,   setQuoteOpen]   = useState(false);
   const [quoteModal,  setQuoteModal]  = useState(false);
-useEffect(function() {
-    var params = new URLSearchParams(window.location.search);
-    if (params.get("quote") === "true") { setQuoteModal(true); }
-  }, []);
   const [isMobile,    setIsMobile]    = useState(false);
 
   useEffect(function() {
@@ -809,265 +845,41 @@ useEffect(function() {
           "width": 512,
           "height": 512
         },
-        "description": "Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, make-ready engineering, permitting coordination, and broadband infrastructure development across the United States.",
+        "description": "Specialized telecom infrastructure engineering firm delivering FTTx network design, OSP fiber engineering, GIS network planning, pole loading analysis, and broadband infrastructure across the USA.",
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
         "foundingDate": "2024",
-        "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 10 },
-        "address": [
-          {
-            "@type": "PostalAddress",
-            "streetAddress": "Cheyenne",
-            "addressLocality": "Cheyenne",
-            "addressRegion": "WY",
-            "postalCode": "82001",
-            "addressCountry": "US"
-          },
-          {
-            "@type": "PostalAddress",
-            "addressLocality": "Gurugram",
-            "addressRegion": "Haryana",
-            "addressCountry": "IN"
-          }
-        ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+13073173044",
-            "contactType": "customer service",
-            "email": "info@serviquent.com",
-            "availableLanguage": "English"
-          },
-          {
-            "@type": "ContactPoint",
-            "email": "career@serviquent.com",
-            "contactType": "Human Resources"
-          }
-        ],
-        "sameAs": [
-          "https://www.serviquent.com",
-          "https://www.linkedin.com/company/serviquent/",
-          "https://www.instagram.com/serviquent/"
-        ],
-        "areaServed": {
-          "@type": "Country",
-          "name": "United States"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Telecom Engineering Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OSP Fiber Engineering", "description": "End-to-end outside plant fiber design including aerial, underground, and hybrid network configurations." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "FTTx Network Design", "description": "Complete FTTH, FTTB, FTTC, and FTTN passive optical network engineering." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GIS Network Planning", "description": "Geospatial mapping, route optimization, and permit-ready asset inventories using ArcGIS and QGIS." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Make-Ready Engineering", "description": "Pre-construction assessments, clearance analysis, and NESC-compliant make-ready packages." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pole Engineering & Inspection", "description": "Structural pole loading analysis using O-Calc Pro and SPIDAcalc." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Permitting & Regulatory Coordination", "description": "End-to-end telecom construction permits, ROW applications, and municipal approvals." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ISP Network Design", "description": "Complete ISP network architecture for fiber, HFC, and fixed wireless platforms." } }
-          ]
-        }
+        "address": { "@type": "PostalAddress", "addressLocality": "Cheyenne", "addressRegion": "WY", "addressCountry": "US" },
+        "sameAs": ["https://www.serviquent.com", "https://www.linkedin.com/company/serviquent/", "https://www.instagram.com/serviquent/"],
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+13073173044", "contactType": "customer service", "email": "info@serviquent.com" }
       },
       {
         "@type": "WebSite",
         "@id": "https://www.serviquent.com/#website",
         "url": "https://www.serviquent.com",
         "name": "Serviquent Prime Solutions",
-        "description": "Telecom Infrastructure Engineering",
-        "publisher": { "@id": "https://www.serviquent.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.serviquent.com/#contact",
-          "query-input": "required name=search_term_string"
-        }
+        "potentialAction": { "@type": "SearchAction", "target": "https://www.serviquent.com/#contact", "query-input": "required name=search_term_string" }
       },
       {
-        "@type": "WebPage",
-        "@id": "https://www.serviquent.com/#webpage",
-        "url": "https://www.serviquent.com",
-        "name": "Telecom Infrastructure Engineering | Serviquent Prime Solutions",
-        "description": "Serviquent Prime Solutions delivers FTTx network design, OSP fiber engineering, GIS network planning, and broadband infrastructure development across the USA.",
-        "isPartOf": { "@id": "https://www.serviquent.com/#website" },
-        "about": { "@id": "https://www.serviquent.com/#organization" },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.serviquent.com" },
-            { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.serviquent.com/#services" },
-            { "@type": "ListItem", "position": 3, "name": "Careers", "item": "https://www.serviquent.com/careers" },
-            { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://www.serviquent.com/#contact" }
-          ]
-        }
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://www.serviquent.com/#service",
-        "name": "Serviquent Prime Solutions",
-        "image": "https://i.ibb.co/RT8wXLXt/serviquent-logo.png",
-        "url": "https://www.serviquent.com",
-        "telephone": "+13073173044",
-        "email": "info@serviquent.com",
-        "priceRange": "$$",
-        "currenciesAccepted": "USD",
-        "paymentAccepted": "Invoice, Bank Transfer",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Cheyenne",
-          "addressRegion": "WY",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 41.1400,
-          "longitude": -104.8202
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/company/serviquent/",
-          "https://www.instagram.com/serviquent/"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.serviquent.com" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.serviquent.com/#services" },
+          { "@type": "ListItem", "position": 3, "name": "Careers", "item": "https://www.serviquent.com/careers" },
+          { "@type": "ListItem", "position": 4, "name": "About Us", "item": "https://www.serviquent.com/about" },
+          { "@type": "ListItem", "position": 5, "name": "Portfolio", "item": "https://www.serviquent.com/portfolio" },
+          { "@type": "ListItem", "position": 6, "name": "Vendors", "item": "https://www.serviquent.com/vendors" },
+          { "@type": "ListItem", "position": 7, "name": "Contact", "item": "https://www.serviquent.com/#contact" }
         ]
       }
     ]
   };
 
-
-
   return (
     <div style={{ fontFamily: "'Outfit', sans-serif", overflowX: "hidden", maxWidth: "100vw" }}>
-      {/* Cursor Glow */}
       {!isMobile && <div id="cursor-glow" style={{ pointerEvents: "none", position: "fixed", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(0,85,233,0.05) 0%, transparent 70%)", transform: "translate(-50%, -50%)", zIndex: 0, transition: "left 0.15s ease, top 0.15s ease" }} />}
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
-
-      {/* ══ NAVBAR ═══════════════════════════════════════════ */}
-      <nav style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 500, height: 72,
-        display: "flex", alignItems: "center", justifyContent: "space-between", padding: isMobile ? "0 20px" : "0 56px",
-        background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
-        boxShadow: scrolled ? "0 1px 28px rgba(12,30,74,0.09)" : "none",
-        backdropFilter: scrolled ? "blur(16px)" : "none",
-        transition: "all 0.4s ease",
-      }}>
-        <a href="/" onClick={function(e) { e.preventDefault(); goTop(); }} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", cursor: "pointer" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/favicon.ico" alt="logo" style={{ height: 42, width: 42, borderRadius: 8 }} onError={function(e) { e.target.style.display = "none"; }} />
-          <div>
-            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: 20, letterSpacing: 0.5, color: scrolled ? "#0c1e4a" : "#fff", lineHeight: 1 }}>SERVIQUENT</div>
-            <div style={{ fontSize: 10, letterSpacing: 3, textTransform: "uppercase", color: scrolled ? "#0055e9" : "#38d9ff", fontWeight: 600 }}>Prime Solutions</div>
-          </div>
-        </a>
-
-        <div style={{ display: isMobile ? "none" : "flex", gap: 34 }}>
-          {["services", "engineering", "fttx", "technology", "projects"].map(function(id) {
-            var label = id === "fttx" ? "FTTx" : id.charAt(0).toUpperCase() + id.slice(1);
-            return (
-              <a key={id} href={"#" + id} className={scrolled ? "nav-a-dark" : "nav-a"}
-                onClick={function(e) { e.preventDefault(); go(id); }}>
-                {label}
-              </a>
-            );
-          })}
-          <a href="/about" className={scrolled ? "nav-a-dark" : "nav-a"}>About</a>
-          <a href="/contact" className={scrolled ? "nav-a-dark" : "nav-a"}>Contact</a>
-          <a href="/portfolio" className={scrolled ? "nav-a-dark" : "nav-a"}>Portfolio</a>
-          <a href="/vendors" className={scrolled ? "nav-a-dark" : "nav-a"}>Vendors</a>
-        </div>
-
-        <button
-          onClick={goQuote}
-          style={{ display: isMobile ? "none" : "block", background: "#0055e9", color: "#fff", border: "none", padding: "11px 26px", borderRadius: 9, fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif", boxShadow: "0 4px 18px rgba(0,85,233,0.32)", transition: "all 0.2s" }}>
-          Get a Quote
-        </button>
-
-        {/* Hamburger Button */}
-        <button
-          onClick={function() { setMobileMenu(!mobileMenu); }}
-          style={{ display: isMobile ? "flex" : "none", flexDirection: "column", gap: 5, background: "none", border: "none", cursor: "pointer", padding: 8 }}>
-          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
-          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
-          <span style={{ width: 24, height: 2, background: scrolled ? "#0c1e4a" : "#fff", display: "block" }} />
-        </button>
-      </nav>
-
-      {/* Mobile Menu Dropdown */}
-      {mobileMenu && (
-        <div style={{ position: "fixed", top: 72, left: 0, right: 0, background: "#fff", zIndex: 499, padding: "20px 24px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", display: "flex", flexDirection: "column", gap: 4 }}>
-          {["Services","Engineering","FTTx","Technology","Projects","About","Contact","Careers","Portfolio","Vendors"].map(function(item) {
-            return (
-              <a key={item} href={item === "Careers" ? "/careers" : item === "Portfolio" ? "/portfolio" : item === "Vendors" ? "/vendors" : item === "Contact" ? "#contact" : "#" + item.toLowerCase()} onClick={function() { setMobileMenu(false); }} style={{ padding: "12px 0", fontSize: 16, fontWeight: 600, color: "#0c1e4a", textDecoration: "none", borderBottom: "1px solid #f0f5ff", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: 1 }}>
-                {item}
-              </a>
-            );
-          })}
-          <a href="#contact" onClick={function() { setMobileMenu(false); }} style={{ marginTop: 12, background: "#0055e9", color: "#fff", padding: "13px 0", borderRadius: 9, fontSize: 15, fontWeight: 600, textDecoration: "none", textAlign: "center", fontFamily: "'Outfit', sans-serif" }}>
-            Get a Quote
-          </a>
-        </div>
-      )}
-
-      {/* ══ HERO ═════════════════════════════════════════════ */}
-      <section style={{ position: "relative", height: "100vh", minHeight: isMobile ? 600 : 700, display: "flex", alignItems: "center", overflow: "hidden", background: "#010c22" }}>
-
-        {/* Real video background */}
-        {/* Video - desktop and android */}
-        {!isMobile && videoOk && (
-          <video
-            autoPlay muted loop playsInline
-            preload="auto"
-            onError={function() { setVideoOk(false); }}
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1, pointerEvents: "none" }}
-          >
-            <source src="https://res.cloudinary.com/dhtwtfbul/video/upload/v1773114165/hero_uvqdpd.mp4" type="video/mp4" />
-          </video>
-        )}
-        {/* iPhone fallback - static image from video */}
-        {isMobile && (
-          <div style={{ position: "absolute", inset: 0, zIndex: 1, backgroundImage: "url(https://res.cloudinary.com/dhtwtfbul/video/upload/so_0,w_1200/v1773114165/hero_uvqdpd.jpg)", backgroundSize: "cover", backgroundPosition: "center" }} />
-        )}
-
-        {/* Dark overlay */}
-        <div style={{
-          position: "absolute", inset: 0, zIndex: 2,
-          background: videoOk
-            ? "linear-gradient(115deg, rgba(1,12,34,0.83) 0%, rgba(1,12,34,0.55) 60%, rgba(0,50,180,0.22) 100%)"
-            : "linear-gradient(135deg, #010c22 0%, #031430 50%, #061c50 100%)",
-        }} />
-
-        {/* Grid lines */}
-        <div style={{
-          position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
-          backgroundImage: "linear-gradient(rgba(56,217,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(56,217,255,0.03) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-        }} />
-
-        {/* Telecom canvas overlay - desktop only */}
-        {!isMobile && <TelecomOverlay />}
-
-        {/* Hero content */}
-        <div style={{ position: "relative", zIndex: 4, padding: isMobile ? "0 20px" : "0 80px", maxWidth: isMobile ? "100%" : 1100, width: "100%", paddingTop: isMobile ? 100 : 0 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "7px 16px", fontSize: isMobile ? 9 : 11, color: "#38d9ff", letterSpacing: isMobile ? 1 : 3, textTransform: "uppercase", fontWeight: 700, marginBottom: 36, background: "rgba(56,217,255,0.06)", animation: "heroUp 0.7s ease both", flexWrap: "wrap", maxWidth: "100%" }}>
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#38d9ff", animation: "blink 2s infinite", display: "inline-block" }} />
-            Telecom Infrastructure Engineering  ·  FTTx  ·  OSP  ·  GIS  ·  Pole Loading  ·  Permitting
-          </div>
-
-          <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(46px, 6.2vw, 84px)", fontWeight: 800, lineHeight: 1.0, letterSpacing: -1, color: "#fff", animation: "heroUp 0.8s 0.12s ease both", animationFillMode: "both" }}>
-            Engineering the<br />
-            <span style={{ color: "#38d9ff", textShadow: "0 0 80px rgba(56,217,255,0.5)" }}>Infrastructure</span><br />
-            Powering Modern<br />
-            Fiber Networks
-          </h1>
-
-          <p style={{ marginTop: 28, fontSize: isMobile ? 14 : 17, lineHeight: 1.8, color: "rgba(255,255,255,0.65)", maxWidth: 580, fontWeight: 400, animation: "heroUp 0.8s 0.26s ease both", animationFillMode: "both" }}>
-            Serviquent Prime Solutions is a specialized telecom infrastructure engineering firm delivering end-to-end solutions across fiber network design, GIS-based planning, make-ready engineering, pole loading analysis, permitting coordination, and broadband infrastructure development — serving operators, ISPs, and utilities across the United States.
-          </p>
-
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
           <div style={{ display: "flex", gap: 10, marginTop: 28, flexWrap: "wrap", animation: "heroUp 0.8s 0.34s ease both", animationFillMode: "both" }}>
             {["FTTH", "FTTB", "FTTC", "FTTN", "HFC", "OSP", "5G", "GIS"].map(function(tag) {
               return <span key={tag} className="hero-tag">{tag}</span>;
@@ -1113,7 +925,7 @@ useEffect(function() {
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>What We Do</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(30px, 3.8vw, 50px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5 }}>
-              Telecom Engineering<br />Services
+              Wireline Engineering<br />Services
             </h2>
           </div>
           <p style={{ maxWidth: 380, color: "#60748b", fontSize: 15, lineHeight: 1.8 }}>
@@ -1136,6 +948,49 @@ useEffect(function() {
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <span style={{ fontSize: 14, color: "#0055e9", fontWeight: 600, cursor: "pointer" }} onClick={function() { setModal(s); }}>Learn More →</span>
                     <button className="arrow-btn" onClick={function() { setModal(s); }}>↗</button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ══ WIRELESS SERVICES ════════════════════════════════ */}
+      <section id="wireless" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#010c22" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 24 }}>
+          <div>
+            <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Wireless Engineering</div>
+            <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(30px, 3.8vw, 50px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5 }}>
+              Wireless Engineering<br />Services
+            </h2>
+          </div>
+          <p style={{ maxWidth: 380, color: "rgba(255,255,255,0.6)", fontSize: 15, lineHeight: 1.8 }}>
+            From RF network design and 5G planning to tower structural analysis, small cell engineering, and wireless permitting — our wireless engineering practice delivers carrier-grade solutions for every deployment type.
+          </p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
+          {WIRELESS_SERVICES.map(function(s) {
+            return (
+              <div key={s.num} className="svc-card tilt-card shimmer-card" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(56,217,255,0.15)" }}>
+                <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={s.img} alt={"Serviquent " + s.title + " - Wireless Engineering Service"} className="svc-img" />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(1,12,34,0.8) 0%, transparent 60%)" }} />
+                  <div style={{ position: "absolute", top: 16, left: 16, fontSize: 11, color: "#38d9ff", letterSpacing: 2.5, fontWeight: 700, background: "rgba(0,85,233,0.3)", border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "4px 13px" }}>{s.num}</div>
+                </div>
+                <div style={{ padding: "22px 24px 26px" }}>
+                  <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 22, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{s.title}</h3>
+                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 20 }}>{s.short}</p>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <span style={{ fontSize: 14, color: "#38d9ff", fontWeight: 600, cursor: "pointer" }}
+                      onClick={function() { setModal(s); }}>
+                      Learn More →
+                    </span>
+                    <button onClick={function() { setModal(s); setTimeout(function() { setQuoteModal(true); }, 300); }}
+                      style={{ background: "rgba(56,217,255,0.1)", color: "#38d9ff", border: "1px solid rgba(56,217,255,0.3)", padding: "8px 16px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
+                      Get a Quote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1386,10 +1241,10 @@ useEffect(function() {
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>Who We Are</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(26px, 3vw, 44px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5, marginBottom: 20 }}>About Serviquent Prime Solutions</h2>
-            <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 14 }}>Some engineering firms design networks. Serviquent engineers the infrastructure that powers entire regions — and we do it with the precision, speed, and carrier-grade standards that the industry's most demanding clients expect.</p>
+            <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 14 }}>Some engineering firms design networks. Serviquent engineers the infrastructure that powers entire regions — and we do it with the precision, speed, and carrier-grade standards that the industry&apos;s most demanding clients expect.</p>
             <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 14 }}>Serviquent Prime Solutions was founded by engineers who built their careers inside the most complex telecom programs in North America. Decades of combined experience designing multi-state fiber deployments, executing Tier 1 carrier engineering programs, and delivering construction-ready packages that go directly to build crews — that is the foundation this company was built on. We established Serviquent because we knew that carrier-grade engineering excellence should not be a privilege reserved for the largest firms. Every regional ISP, every electric cooperative, every municipal broadband authority, and every infrastructure investor deserves deliverables that meet the same exacting standard — precise, compliant, and ready to build from day one, without revision, rework, or delay.</p>
             <p style={{ color: "#60748b", fontSize: 15, lineHeight: 1.9, marginBottom: 14 }}>We operate across the full OSP engineering lifecycle. We design aerial, underground, and hybrid fiber routes using verified GIS data. We engineer complete FTTx passive optical networks for FTTH, FTTB, FTTC, and FTTN deployments. We perform structural pole loading analysis and make-ready engineering to NESC and California GO 95 standards. We prepare Traffic Control Plans (TCP), manage ROW and multi-jurisdictional permitting, produce detailed Bills of Materials (BOM), and deliver final as-built documentation packages that close projects cleanly. For HFC (Hybrid Fiber-Coaxial) networks, we design the full plant from headend through fiber node to subscriber tap.</p>
-            <p style={{ color: "#0055e9", fontSize: 15, lineHeight: 1.9, marginBottom: 14, fontWeight: 600, fontStyle: "italic" }}>We don't just design networks. We engineer the infrastructure backbone of modern America.</p>
+            <p style={{ color: "#0055e9", fontSize: 15, lineHeight: 1.9, marginBottom: 28, fontWeight: 600, fontStyle: "italic" }}>We don&apos;t just design networks. We engineer the infrastructure backbone of modern America.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32, padding: "20px 24px", background: "#f4f8ff", borderRadius: 14, border: "1px solid #e4ecf8" }}>
               <a href="mailto:info@serviquent.com" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
                 <div style={{ width: 36, height: 36, borderRadius: 10, background: "#eef3ff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>📧</div>
@@ -1767,8 +1622,8 @@ useEffect(function() {
           </div>
           {[
             { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }]) },
-            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "/about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "Company Portfolio", h: "/portfolio" }, { l: "Vendor Partnerships", h: "/vendors" }] },
-            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "/contact" }, { l: "Gurugram · India", h: "#contact" }] },
+            { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "#about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "About Us", h: "/about" }, { l: "Company Portfolio", h: "/portfolio" }, { l: "Vendor Partnerships", h: "/vendors" }] },
+            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
               <div key={col.h}>
@@ -1783,7 +1638,7 @@ useEffect(function() {
           })}
         </div>
         <div style={{ paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <p style={{ fontSize: 13, color: "#344055" }}>© 2025 Serviquent Pvt Ltd. All Rights Reserved.</p>
+          <p style={{ fontSize: 13, color: "#344055" }}>© 2026 Serviquent Pvt Ltd. All Rights Reserved.</p>
           <div style={{ display: "flex", gap: 10 }}>
             <>
               {/* LinkedIn */}
