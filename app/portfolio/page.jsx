@@ -76,7 +76,7 @@ export default function Portfolio() {
         </a>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <a href="/" style={{ color: "#60748b", fontSize: 14, fontWeight: 500, textDecoration: "none" }}>← Back to Website</a>
-          <a href="/Serviquent Breif Company prfoile.pdf" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
+          <a href="https://drive.google.com/uc?export=download&id=1RV22sejFaVNoBuT3UCYSozuHVfl_VP_R" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
             style={{ background: "#0055e9", color: "#fff", padding: "10px 22px", borderRadius: 9, fontSize: 14, fontWeight: 600, textDecoration: "none" }}>
             ⬇️ Download PDF
           </a>
@@ -102,7 +102,7 @@ export default function Portfolio() {
                 A comprehensive company profile covering our full range of telecom infrastructure engineering services, technology expertise, and engineering capabilities — available as a free PDF download.
               </p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                <a href="/Serviquent Breif Company prfoile.pdf" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
+                <a href="https://drive.google.com/uc?export=download&id=1RV22sejFaVNoBuT3UCYSozuHVfl_VP_R" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
                   style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#0055e9", color: "#fff", padding: "15px 32px", borderRadius: 12, fontSize: 16, fontWeight: 700, textDecoration: "none", boxShadow: "0 8px 32px rgba(0,85,233,0.4)" }}>
                   ⬇️ Download PDF Company Profile
                 </a>
@@ -147,7 +147,7 @@ export default function Portfolio() {
           />
         </div>
         <div style={{ textAlign: "center", marginTop: 20 }}>
-          <a href="/Serviquent Breif Company prfoile.pdf" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
+          <a href="https://drive.google.com/uc?export=download&id=1RV22sejFaVNoBuT3UCYSozuHVfl_VP_R" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
             style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#0055e9", color: "#fff", padding: "14px 32px", borderRadius: 10, fontSize: 15, fontWeight: 700, textDecoration: "none" }}>
             ⬇️ Download Full PDF
           </a>
@@ -182,7 +182,7 @@ export default function Portfolio() {
         <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? 32 : 48, fontWeight: 800, color: "#fff", marginBottom: 16 }}>Ready to Work Together?</h2>
         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 16, marginBottom: 36, maxWidth: 500, margin: "0 auto 36px" }}>Download our portfolio and reach out to discuss your next telecom engineering project.</p>
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="/Serviquent Breif Company prfoile.pdf" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
+          <a href="https://drive.google.com/uc?export=download&id=1RV22sejFaVNoBuT3UCYSozuHVfl_VP_R" download="Serviquent_Prime_Solutions_Company_Profile.pdf"
             style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "#0055e9", color: "#fff", padding: "15px 36px", borderRadius: 12, fontSize: 16, fontWeight: 700, textDecoration: "none", boxShadow: "0 8px 32px rgba(0,85,233,0.4)" }}>
             ⬇️ Download PDF Company Profile
           </a>
