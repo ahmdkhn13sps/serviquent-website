@@ -961,7 +961,7 @@ export default function Home() {
         </a>
 
         <div style={{ display: isMobile ? "none" : "flex", gap: 34 }}>
-          {["services", "engineering", "fttx", "technology", "projects", "about", "contact"].map(function(id) {
+          {["services", "engineering", "fttx", "technology", "projects", "contact"].map(function(id) {
             var label = id === "fttx" ? "FTTx" : id.charAt(0).toUpperCase() + id.slice(1);
             return (
               <a key={id} href={"#" + id} className={scrolled ? "nav-a-dark" : "nav-a"}
@@ -970,7 +970,7 @@ export default function Home() {
               </a>
             );
           })}
-          <a href="/careers" className={scrolled ? "nav-a-dark" : "nav-a"}>Careers</a>
+          <a href="/about" className={scrolled ? "nav-a-dark" : "nav-a"}>About</a>
           <a href="/portfolio" className={scrolled ? "nav-a-dark" : "nav-a"}>Portfolio</a>
           <a href="/vendors" className={scrolled ? "nav-a-dark" : "nav-a"}>Vendors</a>
         </div>
