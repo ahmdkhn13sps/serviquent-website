@@ -85,6 +85,42 @@ const SERVICES = [
     short: "High-Level Design (HLD) and Low-Level Design (LLD) documentation for telecom network deployments — from conceptual architecture through detailed implementation-ready engineering specifications.",
     full: "Serviquent delivers both High-Level Design (HLD) and Low-Level Design (LLD) documentation packages that together form a complete engineering blueprint for telecom network deployments. Our HLD documents establish the overall network architecture — defining topology, technology selection, capacity planning, node placement strategy, routing hierarchy, and system interfaces at a conceptual level suitable for stakeholder review, business case approval, and project authorization. Our LLD documents translate the approved HLD into detailed, implementation-ready specifications — covering equipment configurations, interface parameters, IP addressing schemes, fiber routing plans, splice schedules, equipment room layouts, power and grounding designs, and complete bill of materials. Together, HLD and LLD packages provide a seamless engineering handoff from concept through construction — ensuring that design intent is preserved at every stage of project execution and that field crews have unambiguous, complete instructions for every element of the deployment.",
   },
+  {
+    num: "W1", title: "RF Network Engineering",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    short: "End-to-end RF network design including frequency planning, coverage analysis, interference mitigation, and propagation modeling for cellular and broadband wireless networks.",
+    full: "Serviquent's RF Network Engineering practice delivers comprehensive radio frequency design solutions for cellular, fixed wireless, and broadband network deployments. Our RF engineers perform detailed propagation modeling using industry-standard tools, conduct frequency planning and channel assignment to minimize co-channel and adjacent-channel interference, and develop coverage prediction maps that accurately represent real-world network performance. We design RF link budgets, calculate EIRP and path loss margins, and optimize antenna configurations for maximum coverage efficiency. Our team supports LTE, 5G NR, CBRS, WISP, and licensed fixed wireless deployments — delivering RF designs that translate directly into deployment-ready network configurations with predictable performance outcomes.",
+  },
+  {
+    num: "W2", title: "Wireless Site Design",
+    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
+    short: "Complete wireless site design including antenna placement, equipment layout, grounding systems, power systems, and tower mount configurations for macro, small cell, and DAS installations.",
+    full: "Our Wireless Site Design team provides full-scope engineering for greenfield tower sites, rooftop installations, small cell deployments, and Distributed Antenna Systems (DAS). We produce complete site design packages including antenna placement diagrams, equipment shelter layouts, cable routing plans, grounding and bonding designs per TIA-222 and NEC standards, backup power system sizing, and tower mount specifications. Our engineers coordinate directly with tower owners, landlords, and municipalities to ensure all structural, electrical, and zoning requirements are met. Every site design package is production-ready — structured to go directly to field installation crews without revision or rework.",
+  },
+  {
+    num: "W3", title: "Tower Structural Analysis",
+    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
+    short: "Structural analysis and modification engineering for wireless towers, monopoles, rooftops, and lattice structures to TIA-222 and ANSI standards.",
+    full: "Serviquent performs structural engineering assessments for wireless towers, monopoles, guyed towers, lattice structures, rooftop installations, and water tank mounts. Our structural engineers analyze existing structures for compliance with TIA-222-H and ANSI standards, assess loading capacity for proposed antenna and equipment additions, and produce stamped modification drawings when reinforcement is required. We perform wind load, ice load, and seismic analyses, evaluate foundation adequacy, and produce full structural reports that satisfy carrier requirements for lease amendments, permitting, and zoning approvals.",
+  },
+  {
+    num: "W4", title: "Small Cell & DAS Engineering",
+    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    short: "Small cell network design and Distributed Antenna System engineering for urban densification, in-building coverage, and public venue wireless deployments.",
+    full: "Our Small Cell and DAS Engineering practice supports urban network densification programs, in-building wireless coverage solutions, and public venue deployments for stadiums, airports, campuses, and transit systems. We design small cell node placement strategies using RF propagation analysis, produce pole attachment designs for street-level small cell installations, and engineer complete Passive and Active DAS architectures from donor antenna through remote units to coverage zones.",
+  },
+  {
+    num: "W5", title: "5G & CBRS Network Planning",
+    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    short: "5G NR and CBRS network planning services including spectrum coordination, coverage design, capacity planning, and deployment strategy for private and public wireless networks.",
+    full: "Serviquent provides specialized 5G NR and CBRS network planning services for enterprise private networks, public carrier deployments, and industrial wireless applications. Our engineers develop 5G coverage and capacity plans, perform spectrum coordination for CBRS deployments through the Spectrum Access System (SAS), and design both Sub-6GHz and mmWave network architectures. We produce detailed deployment strategies covering gNB placement, fronthaul and midhaul fiber routing, core network connectivity, and phased rollout sequencing.",
+  },
+  {
+    num: "W6", title: "Wireless Permitting & Zoning",
+    img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    short: "End-to-end wireless facility permitting including zoning applications, NEPA environmental reviews, FAA obstruction analysis, historic preservation filings, and municipal approvals.",
+    full: "Our Wireless Permitting and Zoning practice manages the complete regulatory approval process for wireless facility deployments. We prepare and submit zoning applications, special use permit requests, variance applications, and administrative approvals for new tower construction and co-location additions. Our team coordinates NEPA environmental reviews, Section 106 historic preservation consultations, FAA Form 7460 obstruction analyses, and FCC antenna structure registration filings. We manage local municipal processes, prepare RF emissions compliance documentation per FCC OET Bulletin 65, and coordinate with state historic preservation offices and tribal consultation requirements.",
+  },
 ];
 
 const WIRELESS_SERVICES = [
@@ -1019,7 +1055,7 @@ export default function Home() {
       </section>
 
       {/* ══ CLIENTS LOGO STRIP ═══════════════════════════════ */}
-      <div style={{ background: "#fff", borderBottom: "1px solid #e4ecf8" }}>
+      <div className="reveal" style={{ background: "#fff", borderBottom: "1px solid #e4ecf8" }}>
         <div style={{ textAlign: "center", fontSize: 11, letterSpacing: 3, textTransform: "uppercase", color: "#94a3b8", padding: "26px 0 20px", fontWeight: 600 }}>
           Trusted by Leading Telecom Operators
         </div>
@@ -1028,12 +1064,12 @@ export default function Home() {
       </div>
 
       {/* ══ SERVICES ═════════════════════════════════════════ */}
-      <section id="services" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
+      <section id="services" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#f4f8ff" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60 }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#0055e9" })}>What We Do</div>
             <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(30px, 3.8vw, 50px)", fontWeight: 800, color: "#0c1e4a", letterSpacing: -0.5 }}>
-              Wireline Engineering<br />Services
+              Telecom Engineering<br />Services
             </h2>
           </div>
           <p style={{ maxWidth: 380, color: "#60748b", fontSize: 15, lineHeight: 1.8 }}>
@@ -1043,7 +1079,7 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
           {SERVICES.map(function(s) {
             return (
-              <div key={s.num} className="svc-card tilt-card shimmer-card">
+              <div key={s.num} className={"svc-card tilt-card shimmer-card reveal delay-" + ((parseInt(s.num.replace("W","1")) % 6) + 1)}>
                 <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={s.img} alt={"Serviquent " + s.title + " - Telecom Engineering Service"} className="svc-img" />
@@ -1056,49 +1092,6 @@ export default function Home() {
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <span style={{ fontSize: 14, color: "#0055e9", fontWeight: 600, cursor: "pointer" }} onClick={function() { setModal(s); }}>Learn More →</span>
                     <button className="arrow-btn" onClick={function() { setModal(s); }}>↗</button>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ══ WIRELESS SERVICES ════════════════════════════════ */}
-      <section id="wireless" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#010c22" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 24 }}>
-          <div>
-            <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Wireless Engineering</div>
-            <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(30px, 3.8vw, 50px)", fontWeight: 800, color: "#fff", letterSpacing: -0.5 }}>
-              Wireless Engineering<br />Services
-            </h2>
-          </div>
-          <p style={{ maxWidth: 380, color: "rgba(255,255,255,0.6)", fontSize: 15, lineHeight: 1.8 }}>
-            From RF network design and 5G planning to tower structural analysis, small cell engineering, and wireless permitting — our wireless engineering practice delivers carrier-grade solutions for every deployment type.
-          </p>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 24 }}>
-          {WIRELESS_SERVICES.map(function(s) {
-            return (
-              <div key={s.num} className="svc-card tilt-card shimmer-card" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(56,217,255,0.15)" }}>
-                <div style={{ position: "relative", height: 220, overflow: "hidden" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.img} alt={"Serviquent " + s.title + " - Wireless Engineering Service"} className="svc-img" />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(1,12,34,0.8) 0%, transparent 60%)" }} />
-                  <div style={{ position: "absolute", top: 16, left: 16, fontSize: 11, color: "#38d9ff", letterSpacing: 2.5, fontWeight: 700, background: "rgba(0,85,233,0.3)", border: "1px solid rgba(56,217,255,0.35)", borderRadius: 100, padding: "4px 13px" }}>{s.num}</div>
-                </div>
-                <div style={{ padding: "22px 24px 26px" }}>
-                  <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 22, fontWeight: 700, color: "#fff", marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: 20 }}>{s.short}</p>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <span style={{ fontSize: 14, color: "#38d9ff", fontWeight: 600, cursor: "pointer" }}
-                      onClick={function() { setModal(s); }}>
-                      Learn More →
-                    </span>
-                    <button onClick={function() { setModal(s); setTimeout(function() { setQuoteModal(true); }, 300); }}
-                      style={{ background: "rgba(56,217,255,0.1)", color: "#38d9ff", border: "1px solid rgba(56,217,255,0.3)", padding: "8px 16px", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer", fontFamily: "'Outfit', sans-serif" }}>
-                      Get a Quote
-                    </button>
                   </div>
                 </div>
               </div>
@@ -1153,7 +1146,7 @@ export default function Home() {
           })}
         </div>
 
-        <div style={{ marginTop: 64, background: "linear-gradient(120deg, #020e28 0%, #0a2266 100%)", borderRadius: 20, padding: isMobile ? "32px 20px" : "48px 56px", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 40 }}>
+        <div className="reveal" style={{ marginTop: 64, background: "linear-gradient(120deg, #020e28 0%, #0a2266 100%)", borderRadius: 20, padding: isMobile ? "32px 20px" : "48px 56px", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", gap: 40 }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Start Your FTTx Project</div>
             <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(22px, 2.5vw, 34px)", fontWeight: 800, color: "#fff" }}>
@@ -1337,7 +1330,7 @@ export default function Home() {
       {/* ══ ABOUT ════════════════════════════════════════════ */}
       <section id="about" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "#fff" }}>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 72, alignItems: "center" }}>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: isMobile ? 280 : 420, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", borderRadius: 24, overflow: "hidden", padding: 0 }}>
+          <div className="reveal-left" style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%)", borderRadius: 22, padding: isMobile ? 24 : 48, border: "1.5px solid #dde8fa", minHeight: isMobile ? 280 : 420, display: "flex", alignItems: "center", justifyContent: "center", background: "transparent", borderRadius: 24, overflow: "hidden", padding: 0 }}>
             <video
               autoPlay muted loop playsInline
               preload="auto"
@@ -1392,7 +1385,7 @@ export default function Home() {
       </section>
 
       {/* ══ CONTACT ══════════════════════════════════════════ */}
-      <section id="contact" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "linear-gradient(145deg, #010c22 0%, #031848 55%, #0055e9 100%)" }}>
+      <section id="contact" className="reveal" style={{ padding: isMobile ? "60px 20px" : "100px 72px", background: "linear-gradient(145deg, #010c22 0%, #031848 55%, #0055e9 100%)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 80, alignItems: "start" }}>
           <div>
             <div style={Object.assign({}, SL, { color: "#38d9ff" })}>Get In Touch</div>
@@ -1487,7 +1480,7 @@ export default function Home() {
       </section>
 
                                     {/* ══ LINKEDIN SECTION ══════════════════════════════════ */}
-      <section style={{ background: "linear-gradient(135deg, #0A66C2 0%, #004182 100%)", padding: isMobile ? "48px 20px" : "64px 80px", textAlign: "center" }}>
+      <section className="reveal" style={{ background: "linear-gradient(135deg, #0A66C2 0%, #004182 100%)", padding: isMobile ? "48px 20px" : "64px 80px", textAlign: "center" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <div style={{ marginBottom: 24, display: "flex", justifyContent: "center" }}>
             <svg width="56" height="56" viewBox="0 0 24 24" fill="white" opacity="0.9">
@@ -1528,7 +1521,7 @@ export default function Home() {
       
 
             {/* ══ COMPANY PORTFOLIO ════════════════════════════════ */}
-      <section style={{ background: "#fff", padding: isMobile ? "60px 20px" : "80px 80px" }}>
+      <section className="reveal" style={{ background: "#fff", padding: isMobile ? "60px 20px" : "80px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 40 : 80, alignItems: "center" }}>
 
           {/* Left - Content */}
@@ -1623,7 +1616,7 @@ export default function Home() {
       </section>
 
       {/* ══ SERVIQUENT GLOBAL SOLUTIONS ═══════════════════════ */}
-      <section style={{ background: "linear-gradient(135deg, #010c22 0%, #0a2266 100%)", padding: isMobile ? "60px 20px" : "80px 80px" }}>
+      <section className="reveal" style={{ background: "linear-gradient(135deg, #010c22 0%, #0a2266 100%)", padding: isMobile ? "60px 20px" : "80px 80px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 40 : 80, alignItems: "center" }}>
           
           {/* Left */}
