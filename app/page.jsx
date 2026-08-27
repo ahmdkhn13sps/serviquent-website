@@ -1701,7 +1701,7 @@ export default function Home() {
           {[
             { h: "What We Do",  links: SERVICES.map(function(s) { return { l: s.title, h: "#services" }; }).concat([{ l: "FTTx Engineering", h: "#fttx" }, { l: "RF Network Engineering", h: "#wireless" }, { l: "Wireless Site Design", h: "#wireless" }, { l: "5G & CBRS Planning", h: "#wireless" }]) },
             { h: "Quick Links", links: [{ l: "Home", h: "#" }, { l: "About", h: "/about" }, { l: "FTTx Solutions", h: "#fttx" }, { l: "Careers", h: "/careers" }, { l: "About Us", h: "/about" }, { l: "Contact Us", h: "/contact" }, { l: "Company Portfolio", h: "/portfolio" }, { l: "Vendor Partnerships", h: "/vendors" }] },
-            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Cheyenne, Wyoming · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
+            { h: "Contact Us",  links: [{ l: "info@serviquent.com", h: "mailto:info@serviquent.com" }, { l: "(307) 317-3044", h: "tel:+13073173044" }, { l: "LinkedIn", h: "https://www.linkedin.com/company/serviquent/" }, { l: "Columbus, Ohio · USA", h: "#contact" }, { l: "Gurugram · India", h: "#contact" }] },
           ].map(function(col) {
             return (
               <div key={col.h}>
