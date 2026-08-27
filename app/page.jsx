@@ -1375,7 +1375,7 @@ export default function Home() {
               { icon: "📧", label: "Email",        val: "info@serviquent.com", href: "mailto:info@serviquent.com" },
               { icon: "📞", label: "Phone (USA)",  val: "(307) 317-3044", href: "tel:+13073173044" },
               { icon: "💼", label: "LinkedIn",     val: "Serviquent Prime Solutions", href: "https://www.linkedin.com/company/serviquent/" },
-              { icon: "🇺🇸", label: "USA Office",   val: "Cheyenne, Wyoming · United States" },
+              { icon: "🇺🇸", label: "USA Office",   val: "Columbus, Ohio · United States" },
               { icon: "🇮🇳", label: "India Office", val: "Gurugram, Haryana · India" },
             ].map(function(d) {
               return (
