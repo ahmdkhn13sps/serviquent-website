@@ -867,7 +867,7 @@ export default function Home() {
         "telephone": "+13073173044",
         "email": "info@serviquent.com",
         "foundingDate": "2024",
-        "address": { "@type": "PostalAddress", "addressLocality": "Cheyenne", "addressRegion": "WY", "addressCountry": "US" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Columbus", "addressRegion": "OH", "addressCountry": "US" },
         "sameAs": ["https://www.serviquent.com", "https://www.linkedin.com/company/serviquent/", "https://www.instagram.com/serviquent/"],
         "contactPoint": { "@type": "ContactPoint", "telephone": "+13073173044", "contactType": "customer service", "email": "info@serviquent.com" }
       },
@@ -1380,7 +1380,9 @@ export default function Home() {
             ].map(function(d) {
               return (
                 <div key={d.label} style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 22 }}>
-                  <div style={{ width: 46, height: 46, borderRadius: 12, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{d.icon}</div>
+                  <div style={{ width: 46, height: 46, borderRadius: 12, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, overflow: "hidden" }}>
+                    {d.icon === "🇺🇸" ? <img src="https://flagcdn.com/w80/us.png" alt="USA" style={{ width: 46, height: 46, objectFit: "cover" }} /> : d.icon === "🇮🇳" ? <img src="https://flagcdn.com/w80/in.png" alt="India" style={{ width: 46, height: 46, objectFit: "cover" }} /> : d.icon}
+                  </div>
                   <div>
                     <div style={{ fontSize: 11, color: "rgba(255,255,255,0.42)", marginBottom: 3 }}>{d.label}</div>
                     <div style={{ fontSize: 15, color: "#fff", fontWeight: 500 }}>{d.href ? <a href={d.href} style={{color:"inherit",textDecoration:"none"}}>{d.val}</a> : d.val}</div>
