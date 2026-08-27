@@ -211,7 +211,7 @@ export default function AboutPage() {
 
         {/* FOOTER */}
         <footer style={{ background: "#010c22", padding: "32px 72px", textAlign: "center" }}>
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>© 2026 <a href="/" style={{ color: "#38d9ff", textDecoration: "none", fontWeight: 600 }}>Serviquent Prime Solutions</a> · All Rights Reserved · Cheyenne, Wyoming USA</p>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>© 2026 <a href="/" style={{ color: "#38d9ff", textDecoration: "none", fontWeight: 600 }}>Serviquent Prime Solutions</a> · All Rights Reserved · Columbus, Ohio USA</p>
         </footer>
       </div>
     </>
